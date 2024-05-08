@@ -86,7 +86,8 @@ These headings highlight the specific operations that involve manipulation and a
 In summary, while some operations may involve more complex algorithms or techniques, most of the listed operations can be implemented efficiently using 32-bit integer arithmetic, making them suitable for computation on integer matrices.
 
 
-## examples
+# chatgpt erroneous examples follow
+
 
 ### Discrete Fourier Transform (DFT) on a 2D matrix and store the results in a complex array. 
 
