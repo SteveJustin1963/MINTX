@@ -86,122 +86,16 @@ These headings highlight the specific operations that involve manipulation and a
 In summary, while some operations may involve more complex algorithms or techniques, most of the listed operations can be implemented efficiently using 32-bit integer arithmetic, making them suitable for computation on integer matrices.
 
 
-# chatgpt erroneous examples follow
-
-
-### Discrete Fourier Transform (DFT) on a 2D matrix and store the results in a complex array. 
-
+## thinking about the grammar
 ```
-# Push SIZE to the stack
-4 CONSTANT SIZE
-
-# Create and push the input matrix to the stack
-[[1 2 3 4] [5 6 7 8] [9 10 11 12] [13 14 15 16]] CONSTANT INPUT_MATRIX
-
-# Create complex_array initialized to zeros
-SIZE SIZE * 0 FILL CONSTANT COMPLEX_ARRAY
-
-# Calculate Discrete Fourier Transform
-0 SIZE 1 FOR K DO
-    0 SIZE 1 FOR L DO
-        0.0 0.0 2VARIABLE SUM_REAL SUM_IMAG
-
-        0 SIZE 1 FOR M DO
-            0 SIZE 1 FOR N DO
-                # Compute theta = 2 * PI * (k * m / SIZE + l * n / SIZE)
-                K M * L N * + SIZE / FLOAT 2 PI * CONSTANT THETA
-                
-                # Calculate real_part and imag_part
-                INPUT_MATRIX M N AT COS THETA * INPUT_MATRIX M N AT SIN THETA * NEGATE 
-                2VARIABLE REAL_PART IMAG_PART
-                
-                # Update sum_real and sum_imag
-                SUM_REAL @ REAL_PART + TO SUM_REAL
-                SUM_IMAG @ IMAG_PART + TO SUM_IMAG
-            LOOP
-        LOOP
-
-        # Store computed values in complex_array
-        K SIZE * L + COMPLEX_ARRAY SUM_REAL @ SUM_IMAG @ 2ARRAY AT!
-    LOOP
-LOOP
-
-# Display complex_array
-0 SIZE SIZE * 1 FOR I DO
-    COMPLEX_ARRAY I AT 2DUP . . CR DROP
-LOOP
+>[
+[22 33 44 55]  ; enter
+[22 33 44 55]  ;enter
+] a!            ; ctrl-enter
+```
+pi a * .        ;ctrl-enter
+> [69.12 103.67 138.23 172.79
+   69.12 103.67 138.23 172.79]
 ```
 
-1. **Definitions**: We use `CONSTANT` to define static variables and `2VARIABLE` for pairs of variables, like real and imaginary parts of complex numbers.
-2. **Matrix Operations**: `INPUT_MATRIX M N AT` fetches the element at position (M, N) of the matrix.
-3. **Mathematical Functions**: We assume operations like `COS`, `SIN`, `+`, and `*` behave as in typical Forth, operating on the top items of the stack.
-4. **Storing Results**: `AT!` is used to store results back into the matrix or array, `2ARRAY AT!` is assumed to store pairs (like complex numbers).
 
-This pseudo-code simplifies the adaptation of typical programming tasks into a stack-based, array-manipulative approach like that which might be used in a MatrixForth environment. Note that actual syntax and available commands might vary depending on the specific implementation of the language.
-
-## simplified pseudocode for a basic audio filter implemented in a Forth-like structure; demonstrate a basic low-pass filter:
-
-```
-\ Define constants
-VARIABLE sample_rate  44100 \ Sampling rate in Hz
-VARIABLE cutoff_freq  3000  \ Cutoff frequency in Hz
-VARIABLE dt
-VARIABLE rc
-VARIABLE alpha
-
-\ Calculate constants for the filter
-: calculate-constants
-    sample_rate @ to-float
-    cutoff_freq @ to-float
-    1e0 f/                \ Convert cutoff frequency to seconds (1/f_c)
-    pi f*                 \ Calculate RC = 1/(2*pi*f_c)
-    rc f!
-    sample_rate @ to-float
-    1e0 f/                \ dt = 1/sample_rate
-    dt f!
-    dt @ f@ f/
-    rc @ f@ f+
-    1e0 f/                \ alpha = dt / (RC + dt)
-    alpha f! ;
-
-\ Initialize filter state
-VARIABLE last_output
-
-: init-filter
-    0 last_output ! ;
-
-\ Apply filter to a single sample
-: apply-filter ( input -- output )
-    last_output @ f@          \ Get the last output
-    alpha @ f@                \ Get alpha
-    over to-float             \ Convert input to float
-    3 pick f@ f*              \ Multiply input by alpha
-    f*                        \ Multiply last output by (1 - alpha)
-    1e0 alpha @ f@ f- f* f+
-    fswap                     \ Swap to put output on top of stack for storing
-    last_output f!            \ Update last output
-    fto-integer ;             \ Convert filtered value back to integer
-
-\ Process an array of audio samples
-: process-audio ( addr num -- )
-    calculate-constants       \ Prepare filter parameters
-    init-filter               \ Initialize filter variables
-    0 do                      \ Loop through each sample
-        i cells + @           \ Get the sample
-        apply-filter          \ Apply the filter to the sample
-        i cells + !           \ Store the filtered sample back
-    loop ;
-```
-
-### Explanation:
-1. **Define Constants and Variables:** The sampling rate and cutoff frequency are set. Additional variables (`dt`, `rc`, `alpha`) are used to store intermediate values for the filter calculations.
-
-2. **Calculate Constants:** This function computes the necessary constants for the filter based on the sampling rate and cutoff frequency. It calculates `alpha`, which is a factor that determines how much of the new input affects the output.
-
-3. **Initialization:** The initial state of the filter (last output) is set to zero.
-
-4. **Filter Application:** This part of the pseudocode defines how the filter processes a single audio sample, applying the simple low-pass filter equation.
-
-5. **Process Audio Array:** The function to process an entire array of samples is outlined, initializing the filter, and then looping over each sample to apply the filter.
-
-This pseudocode can be adapted or expanded based on specific needs, such as different types of filters or integrating with hardware-specific Forth implementations for DSP tasks.
