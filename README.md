@@ -46,16 +46,28 @@ These operations are fundamental in linear algebra and find applications in vari
   
      
 
-## thinking about the grammar
+## experimental ideas about grammar
 ```
->[
-[22 33 44 55]  ; enter
-[22 33 44 55]  ;enter
-] a!            ; ctrl-enter
-```
-pi a * .        ;ctrl-enter
-> [69.12 103.67 138.23 172.79
-   69.12 103.67 138.23 172.79]
+> [22 33 44 55] a!
+> a.
+> 3232
+>
+
+
+> [[22 33 44 55]
+   [22 33 44 55]
+] a!
+> a.
+> 3233
+
+>pi a*.       
+> a/L   ; some command like /L
+[
+ [69.12 103.67 138.23 172.79]
+ [69.12 103.67 138.23 172.79]
+]
+
+
 ```
 
 
