@@ -4,7 +4,7 @@ mathematical operations that can be performed on matrices in mint code
 
 ## Llist of common mathematical operations that can be performed on matrices:
 
-1. **Matrix Addition**: Adding corresponding elements of two matrices to produce a new matrix.
+-  **Matrix Addition**: Adding corresponding elements of two matrices to produce a new matrix.
    
 2. **Matrix Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
    
