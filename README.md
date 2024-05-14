@@ -35,11 +35,12 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 >
 
 
-> [[22 33 44 55][22 33 44 55]] a!    ;save to a
+> [[22 33 44 55][22 33 44 55]]a!    ;save to a
 > a.    ;print a memory location
 > 3233
 > .a   ; prints all the array
-> [
+>
+[
 [22 33 44 55]
 [22 33 44 55]
 ] 
@@ -47,7 +48,8 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 
 >pi a*       
 > .a
-> [
+>
+[
 [69.12 103.67 138.23 172.79]
 [69.12 103.67 138.23 172.79]
 ]
