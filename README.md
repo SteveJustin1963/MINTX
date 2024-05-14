@@ -30,7 +30,7 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ```
 > [22 33 44 55] a!
 > a.
-> 3232
+> 3232   ; memory location
 >
 
 
