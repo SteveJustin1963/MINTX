@@ -29,7 +29,8 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ## experimental ideas about grammar
 ```
 > [22 33 44 55] a!
-> a.
+> a
+> .
 > 3232   ; memory location
 >
 
@@ -37,12 +38,13 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 > [[22 33 44 55]
    [22 33 44 55]
 ] a!
-> a.
+> a
+> .
 > 3233
 
->pi a*.       
-> a/L   ; some command like /L
-[
+>pi a*       
+> a.
+> [
  [69.12 103.67 138.23 172.79]
  [69.12 103.67 138.23 172.79]
 ]
