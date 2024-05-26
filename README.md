@@ -42,20 +42,29 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ```
 ## array range 
 ```
-> [1x4] a
+> [1x4] a!  ; fill range from 1 to 4
 > ctr.
 1 2 3 4
 > a.
 3232  ; mem location
 >
-```
+
+> [4x1] a!
+> ctr.
+1
+2
+3
+4
+>
+
+ ```
 ## zeros in array
 
 ```
-> 0[1x4] a!
+> 0[1x4] a! ; 
 > ctrl.
 0 0 0 0
-
+>
 
 
 > 0[4x1] a!
@@ -65,8 +74,12 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 0
 0
 >
+```
+## 
 
-> /r[4x4] a!   ; fill a 4x4 matrix with rand integers
+## 4x4 martrix, n x n
+```
+> [4x4] a!   ; fill a 4x4 matrix with rand integers
 >ctr.
 2211 5004 2311
 12 3333 7123
@@ -75,7 +88,6 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 > ?(1,1)
 3333
 > 
-
 
 ```
 
