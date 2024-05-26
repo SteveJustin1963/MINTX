@@ -26,13 +26,76 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 
      
 
-## experimental ideas about grammar
+## ideas about the grammar
+## enter a array 
 ```
-> [22 33 44 55] a!    ; the address is placed on the stack
-> a      ; dont need a@ to recall, just a is enough to reference it
-> .      ; 
-> 3232   ; memory location
+
+> [22 33 44 55] a!    ; stores the array and memory location to stack
+> a      ; recall a memory location, dont need @, place on stack 
+> .      ; show the stack
+3232   ; mem address, too use array we have to access the contents
+> a 1?.
+33
+> a 2?.
+44
+> 
+```
+## array range 
+```
+> [1x4] a
+> ctr.
+1 2 3 4
+> a.
+3232  ; mem location
 >
+```
+## zeros in array
+
+```
+> 0[1x4] a!
+> ctrl.
+0 0 0 0
+
+
+
+> 0[4x1] a!
+> ctr.
+0
+0
+0
+0
+>
+
+> /r[4x4] a!   ; fill a 4x4 matrix with rand integers
+>ctr.
+2211 5004 2311
+12 3333 7123
+44545 11134 7003
+> 
+> ?(1,1)
+3333
+> 
+
+
+```
+
+
+
+
+
+## a matrix has multiple rows
+```
+> [1 2 3; 4 5 6;7 8 9] a
+> .
+> 3232
+> ctr.  ; display the matrix
+> 1 2 3
+  4 5 6 
+  7 8 9
+>
+```
+
+
 
 
 > [[22 33 44 55][22 33 44 55]]a!    ;save to a
