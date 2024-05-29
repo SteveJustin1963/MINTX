@@ -28,8 +28,8 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 
 ## ideas about the grammar
 ## enter a array 
-```
 
+```
 > [22 33 44 55] a! ;store addr in a
 > .      
 3232   ; mem address
@@ -55,8 +55,7 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 3
 4
 >
-
- ```
+```
 ## zeros in array
 
 ```
@@ -105,8 +104,7 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
   7 8 9
 >
 ```
-
-
+```
 > [[22 33 44 55][22 33 44 55]] a!     
 > a.    ;print a memory location
 > 3233
@@ -132,9 +130,8 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 > ctr.
 1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
 ```
-```
 complex
-
+```
 > 3-4i
 > . 
 3-4i 
@@ -182,8 +179,7 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 >  a 1 .* b!
 > b@.
 6+8i
-```
-``` 
+> 
 > [1 2;3 4]a!
 >ctr.  
 1 2 
