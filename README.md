@@ -30,19 +30,18 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ## enter a array 
 ```
 
-> [22 33 44 55] a!    ; stores the array and memory location to stack
-> a      ; recall a memory location, dont need @, place on stack 
-> .      ; show the stack
-3232   ; mem address, too use array we have to access the contents
-> a 1?.
+> [22 33 44 55] a! ;store addr in a
+> .      
+3232   ; mem address
+> a 1?. ; display contents
 33
 > a 2?.
 44
 > 
 ```
-## array range 
+## array fill 
 ```
-> [1x4] a!  ; fill range from 1 to 4
+> [1x4] a!  ; 
 > ctr.
 1 2 3 4
 > a.
@@ -74,10 +73,15 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 0
 0
 >
+> 3[4x1]
+> ctr.
+3
+3
+3
+3
+>
 ```
-## 
-
-## 4x4 martrix, n x n
+## martrix, n x n
 ```
 > /r[4x4] a!   ; fill a 4x4 matrix with rand integers
 > ctr.
@@ -85,15 +89,10 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 12    3333  7123
 4454  11134 7003
 > 
-> ?(1,1)
+> ?(1,1)  ; show
 3333
 > 
-
 ```
-
-
-
-
 
 ## a matrix has multiple rows
 ```
@@ -108,17 +107,16 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ```
 
 
-> [[22 33 44 55][22 33 44 55]] a!    ;save to a
+> [[22 33 44 55][22 33 44 55]] a!     
 > a.    ;print a memory location
 > 3233
-> .a   ; prints all the array
+> ctr.  ; prints all the array
 22 33 44 55
 22 33 44 55
 >
 
 > pi a *       
-> .a
->
+> ctr.
 69.12 103.67 138.23 172.79
 69.12 103.67 138.23 172.79
 >
@@ -129,10 +127,6 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ```
 
 ```
-> 3 8 -
-> .
--5 
-
 > [2 4 5 6 7] a! 
 > a 3.1 -
 > ctr.
@@ -142,10 +136,10 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 complex
 
 > 3-4i
-> ctr. 
+> . 
 3-4i 
 > 2-
-> ctr. 
+> . 
 1-4i
 >
 ```
