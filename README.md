@@ -159,3 +159,44 @@ complex
 ```
 
 
+## DOTTIMES Element-wise Multiplication Operator
+
+Multiplies two numerical arrays (elementwise). There are two forms for its use, both with the same general syntax:
+  y = a .* b
+where a and b are n-dimensional arrays of numerical type. In the first case, the two arguments are the same size, in which case, the output y is the same size as the inputs, and is the element-wise product of a and b. In the second case, either a or b is a scalar, in which case y is the same size as the larger argument, and is the product of the scalar with each element of the other argument. 
+
+```
+> 3 8 .*
+> .
+24 
+>
+> 3.1 [2 4 5 6 7] .*
+> .
+>
+> .2000   12.4000   15.5000   18.6000   21.7000 
+>
+> 3+4i
+> ".
+3+4i a!
+>
+>  a 1 .* b!
+> b@.
+6+8i
+```
+``` 
+> [1 2;3 4]a!
+>ctr.  
+1 2 
+3 4 
+>[2 3;6 7]b!
+> b@ ctr.
+2 3 
+6 7 
+>
+> a b .*
+> ctr.
+2  6 
+18 28
+```
+
+ 
