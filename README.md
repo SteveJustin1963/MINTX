@@ -115,19 +115,17 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 > 3233
 > .a   ; prints all the array
 >
-[
-[22 33 44 55]
-[22 33 44 55]
-] 
 
+22 33 44 55
+22 33 44 55] 
+>
 
 >pi a*       
 > .a
 >
-[
-[69.12 103.67 138.23 172.79]
-[69.12 103.67 138.23 172.79]
-]
+69.12 103.67 138.23 172.79
+69.12 103.67 138.23 172.79
+
 >
 
 ```
