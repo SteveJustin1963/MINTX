@@ -108,8 +108,6 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ```
 
 
-
-
 > [[22 33 44 55][22 33 44 55]] a!    ;save to a
 > a.    ;print a memory location
 > 3233
@@ -124,7 +122,46 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 69.12 103.67 138.23 172.79
 69.12 103.67 138.23 172.79
 >
+> a 2 -
+> ctr.
+67.12 101.67 136.23 170.79
+67.12 101.67 136.23 170.79
+```
 
+```
+> 3 8 -
+> .
+-5 
+
+> [2 4 5 6 7] a! 
+> a 3.1 -
+> ctr.
+1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
+```
+```
+complex
+
+> 3-4i
+> ctr. 
+3-4i 
+> 2-
+> ctr. 
+1-4i
+>
+```
+```
+> [1 2;3 4]a!
+> ctr.
+1 2 
+3 4 
+> [2 3;6 7]b!
+> ctr.
+2 3 
+6 7 
+> a b -
+> ctr.
+-1 -1 
+-3 -3 
 ```
 
 
