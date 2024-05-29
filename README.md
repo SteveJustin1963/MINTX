@@ -81,9 +81,9 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 ```
 > [4x4] a!   ; fill a 4x4 matrix with rand integers
 >ctr.
-2211 5004 2311
-12 3333 7123
-44545 11134 7003
+2211  5004  2311
+12    3333  7123
+4454  11134 7003
 > 
 > ?(1,1)
 3333
