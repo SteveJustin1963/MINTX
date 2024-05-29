@@ -79,8 +79,8 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 
 ## 4x4 martrix, n x n
 ```
-> [4x4] a!   ; fill a 4x4 matrix with rand integers
->ctr.
+> /r[4x4] a!   ; fill a 4x4 matrix with rand integers
+> ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
@@ -97,7 +97,7 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 
 ## a matrix has multiple rows
 ```
-> [1 2 3; 4 5 6;7 8 9] a
+> [1 2 3; 4 5 6;7 8 9] a!
 > .
 > 3232
 > ctr.  ; display the matrix
@@ -110,22 +110,19 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 
 
 
-> [[22 33 44 55][22 33 44 55]]a!    ;save to a
+> [[22 33 44 55][22 33 44 55]] a!    ;save to a
 > a.    ;print a memory location
 > 3233
 > .a   ; prints all the array
->
-
 22 33 44 55
-22 33 44 55] 
+22 33 44 55
 >
 
->pi a*       
+> pi a *       
 > .a
 >
 69.12 103.67 138.23 172.79
 69.12 103.67 138.23 172.79
-
 >
 
 ```
