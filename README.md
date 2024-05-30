@@ -2,6 +2,7 @@
 mathematical operations that can be performed on matrices in mint code
 
 
+
 ## matrix operations: 
 - **Element-wise** Operations: Performing element-wise operations (e.g., addition, multiplication) between two matrices of the same size. Element-wise operations involve performing arithmetic operations (addition, subtraction, multiplication, division) on corresponding elements of two matrices. These operations can be implemented using simple loops that iterate over the elements of the matrices and perform the desired arithmetic operations using 32-bit integer arithmetic.
   - Matrix **Addition**: Adding corresponding elements of two matrices to produce a new matrix.
@@ -23,7 +24,6 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 - Matrix **Exponentiation**: Raising a square matrix to a positive integer power, which involves multiplying the matrix by itself a certain number of times. Raising a matrix to a positive integer power involves performing repeated matrix multiplications. Using techniques like exponentiation by squaring, this operation can be carried out efficiently using 32-bit integer arithmetic.
 - Solving **Linear Equations**: Using matrices to represent systems of linear equations and solving them using techniques like Gaussian elimination or matrix inversion. Solving systems of linear equations involves performing matrix operations such as inversion, multiplication, and factorization. These operations can be implemented using 32-bit integer arithmetic along with techniques like Gaussian elimination or matrix factorization algorithms
 - more
-
      
 
 ## ideas about the grammar
