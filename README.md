@@ -33,7 +33,7 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 - more
      
 
-## ideas about the grammar
+##  Grammar
 ## enter a array 
 
 ```
