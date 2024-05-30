@@ -205,7 +205,7 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 9 10 11 12
 13 14 15 16
 >
-> a /t ; transpose a
+> a -t ; transpose a
 > ctr.
 1 5 9 13
 2 6 10 14
