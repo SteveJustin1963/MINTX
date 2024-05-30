@@ -13,7 +13,8 @@ mathematical operations that can be performed on matrices in mint code
 - Identity matrix, An identity matrix is a special type of square matrix in which all the elements of the principal diagonal are ones and all other elements are zeros.
   ```  - eg 1 0 0
          0 1 0
-         0 0 1 ```
+         0 0 1
+  ```
 - Matrix **Inversion**, Division: Finding the inverse of a matrix, which is a matrix that, when multiplied with the original matrix, yields the identity matrix.
 - **Transpose**: Computing the transpose of a matrix, which involves swapping its rows and columns.
 In terms of 32-bit integer operations, transposing a matrix involves swapping the elements across the main diagonal of the matrix. This can be done efficiently using nested loops to iterate over the rows and columns of the matrix, swapping each element with its corresponding element across the diagonal.
