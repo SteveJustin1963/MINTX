@@ -11,7 +11,7 @@ mathematical operations that can be performed on matrices in mint code
   - Matrix **Multiplication**: Multiplying two matrices to produce a new matrix.
      - involves the dot product of rows and columns.
 - Identity matrix, An identity matrix is a special type of square matrix in which all the elements of the principal diagonal are ones and all other elements are zeros.
-`example`
+`example 3x3`
 ```
 1 0 0
 0 1 0
