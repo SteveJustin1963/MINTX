@@ -37,7 +37,7 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
      
 
 # Grammar
-saving a number is per normal, 
+saving a number as per normal, 
 ```
 > 12 ; place 12 on the stack
 > a! ; store the number in a, a to z
