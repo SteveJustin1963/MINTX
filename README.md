@@ -190,7 +190,7 @@ complex
 ```
 
 
-## DOTTIMES Element-wise Multiplication Operator
+## DOT TIMES Element-wise Multiplication Operator
 
 Multiplies two numerical arrays (elementwise). There are two forms for its use, both with the same general syntax:
   y = a .* b
