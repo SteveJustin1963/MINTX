@@ -58,6 +58,13 @@ saving a number as per normal,
 > a0?. a1?. a2?.  ; u cant do a 0?. 1?. 2?. u need the mem location each time
 1 2 3
 >
+>
+> a ctr.
+1 2 3
+>
+>
+
+; control . show the contents of last instruction, nothing to do with stack
 ```
 
 ## enter a vector - row
@@ -77,7 +84,7 @@ saving a number as per normal,
 ## array fill 
 ```
 > [1x4] a!  ; 
-> ctr.
+> ctr.  ; control . show the contents of last instruction, nothing to do with stack
 1 2 3 4
 > a.
 3232  ; mem location
