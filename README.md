@@ -6,7 +6,8 @@ mathematical operations that can be performed on matrices in mint code
 ## matrix operations: 
 - Grammar, entering etc
   - enter and store vector ( single column or row matrix)
-  -    
+ 
+
 - **Element-wise** Operations: Performing element-wise operations (e.g., addition, multiplication) between two matrices of the same size. Element-wise operations involve performing arithmetic operations (addition, subtraction, multiplication, division) on corresponding elements of two matrices. These operations can be implemented using simple loops that iterate over the elements of the matrices and perform the desired arithmetic operations using 32-bit integer arithmetic.
   - Matrix **Addition**: Adding corresponding elements of two matrices to produce a new matrix.
   - Matrix **Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
@@ -47,30 +48,32 @@ saving a number as per normal,
 > 12 ; thats better
 > 
 ```
-## enter a vector 
+## enter a vector - column 
 
+```
+> [1 2 3]
+> a!
+> .
+3232  ; whats this ? its a mem location of the vector, where are the numbers ?
+> a0?. a1?. a2?.  ; u cant do a 0?. 1?. 2?. u need the mem location each time
+1 2 3
+>
+```
+
+## enter a vector - column
 
 
 ```
-> [22 33 44 55] a! ;store addr in a
-> .      
-3232   ; mem address
-> a 1?. ; display contents
-33
-> a 2?.
-44
+> [1 ; 2 ; 3] ; or [1;2;3] is ok
+> a!
+> .
+3232  
+> a0?. a1?. a2?.  ; 
+1
+2
+3
 >
-> xxxx
-> [22 ; 33 ; 44 ; 55] a! ;store addr in a
-
-
-> .      
-3232   ; mem address
-> a 1?. ; display contents
-33
-> a 2?.
-44
-
+```
 
 ```
 ## array fill 
