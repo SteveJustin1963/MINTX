@@ -60,15 +60,13 @@ saving a number as per normal,
 >
 ```
 
-## enter a vector - column
-
-
+## enter a vector - row
 ```
-> [1 ; 2 ; 3] ; or [1;2;3] is ok
+> [1 ; 2 ; 3] ; or [1;2;3] is ok, the `;` makes it row
 > a!
 > .
 3232  
-> a0?. a1?. a2?.  ; 
+> a0?. a1?. a2?.  ; it knows its a row<<<<<<<<<<<<<<<
 1
 2
 3
