@@ -73,7 +73,7 @@ saving a number as per normal,
 >
 ```
 
-```
+ 
 ## array fill 
 ```
 > [1x4] a!  ; 
@@ -138,8 +138,8 @@ saving a number as per normal,
   4 5 6 
   7 8 9
 >
-```
-```
+> 
+>
 > [[22 33 44 55][22 33 44 55]] a!     
 > a.    ;print a memory location
 > 3233
@@ -157,9 +157,8 @@ saving a number as per normal,
 > ctr.
 67.12 101.67 136.23 170.79
 67.12 101.67 136.23 170.79
-```
-
-```
+>
+>
 > [2 4 5 6 7] a! 
 > a 3.1 -
 > ctr.
@@ -174,8 +173,8 @@ complex
 > . 
 1-4i
 >
-```
-```
+>
+>
 > [1 2;3 4]a!
 > ctr.
 1 2 
