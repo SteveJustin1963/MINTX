@@ -5,6 +5,8 @@ mathematical operations that can be performed on matrices in mint code
 
 ## matrix operations: 
 - Grammar, entering etc
+  - enter and store vector ( single column or row matrix)
+  -    
 - **Element-wise** Operations: Performing element-wise operations (e.g., addition, multiplication) between two matrices of the same size. Element-wise operations involve performing arithmetic operations (addition, subtraction, multiplication, division) on corresponding elements of two matrices. These operations can be implemented using simple loops that iterate over the elements of the matrices and perform the desired arithmetic operations using 32-bit integer arithmetic.
   - Matrix **Addition**: Adding corresponding elements of two matrices to produce a new matrix.
   - Matrix **Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
@@ -34,8 +36,19 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 - more
      
 
-##  Grammar
-## enter a array 
+# Grammar
+saving a number is per normal, 
+> 12 ; place 12 on the stack
+> a! ; store the number in a, a to z
+> .
+> err ; no stack value
+> a.
+> 12 ; thats better
+> 
+
+## enter a vector 
+
+
 
 ```
 > [22 33 44 55] a! ;store addr in a
@@ -45,7 +58,19 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 33
 > a 2?.
 44
-> 
+>
+> xxxx
+> [22 ; 33 ; 44 ; 55] a! ;store addr in a
+
+
+> .      
+3232   ; mem address
+> a 1?. ; display contents
+33
+> a 2?.
+44
+
+
 ```
 ## array fill 
 ```
