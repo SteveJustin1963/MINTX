@@ -40,12 +40,12 @@ In terms of 32-bit integer operations, transposing a matrix involves swapping th
 # Grammar
 saving a number as per normal, 
 ```
-> 12 ; place 12 on the stack
-> a! ; store the number in a, a to z
+> 12     // place 12 on the stack
+> a!     // store the number in a, a to z
 > .
-> err ; no stack value
+> err    // no stack value
 > a.
-> 12 ; thats better
+> 12     // thats better
 > 
 ```
 ## enter a vector - column 
@@ -53,48 +53,46 @@ saving a number as per normal,
 ```
 > [1 2 3]
 > a!
-> .
-3232  ; whats this ? its a mem location of the vector, where are the numbers ?
-> a0?. a1?. a2?.  ; u cant do a 0?. 1?. 2?. u need the mem location each time
+> a.
+3232      // whats this ? its a mem location of the vector, where are the numbers ?
+> a0?. a1?. a2?.    // u cant do a 0?. 1?. 2?. u need the mem location each time
+1 2 3
+>
+> a(0-1)?.
+1 2 3    //same
+>
+> a ctr.    // show all at once, btw these are never on the stack 
 1 2 3
 >
 >
-> a ctr.
-1 2 3
->
->
-
-; control . show the contents of last instruction, nothing to do with stack
+            // control . show the contents of last instruction, nothing to do with stack
 ```
 
 ## enter a vector - row
 ```
-> [1 ; 2 ; 3] ; or [1;2;3] is ok, the `;` makes it row
+> [1 ; 2 ; 3]     // or [1;2;3] is ok, the `;` makes it row
 > a!
 > .
-> 0 ; nothing to show when u stored it in a it was taken off the stack
+> 0               // nothing to show when u stored it in a it was taken off the stack
 > a.
-3232  ; they u are
-> a0-2?.  ; it knows its a row
+3232              // they u are
+> a(0-2)?.        // range 0-2, it knows its a row
 1
 2
 3
 >
 > a0?.
-> 1 ; looks like we cant tell if irs row or column
-
+1 
+>
 ```
 
  
 ## array fill 
 ```
-> [1x4] a!  ; 
-> ctr.  ; control . show the contents of last instruction, nothing to do with stack
+> [1x4] a!  
+> ctr.      // control . show the contents of last instruction, nothing to do with stack
 1 2 3 4
-> a.
-3232  ; mem location
 >
-
 > [4x1] a!
 > ctr.
 1
@@ -106,8 +104,8 @@ saving a number as per normal,
 ## zeros in array
 
 ```
-> 0[1x4] a! ; 
-> ctrl.
+> 0[1x4] a! 
+> ctl.
 0 0 0 0
 >
 
@@ -129,37 +127,45 @@ saving a number as per normal,
 ```
 ## martrix, n x n
 ```
-> /r[4x4] a!   ; fill a 4x4 matrix with rand integers
+> /r[4x4] a!       // fill a 4x4 matrix with rand integers
 > ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
 > 
-> ?(1,1)  ; show
+> a(1,1)?.          // show
 3333
-> 
+> a(1,2)?.
+11134
+>
+> a(0-2)?.
+2211  5004  2311
+12    3333  7123
+4454  11134 7003
+>               // its knows its a 4x4
+> a(0-1)?.  // show part of the 4x4
+2211  5004  
+12    3333
+>
 ```
 
 ## a matrix has multiple rows
 ```
-> [1 2 3; 4 5 6;7 8 9] a!
-> .
-> 3232
-> ctr.  ; display the matrix
-> 1 2 3
-  4 5 6 
-  7 8 9
+> [1 2 3 ; 4 5 6 ; 7 8 9] a!
+> a.
+3232
+> ctr.  // display the matrix
 >
-> 
+1 2 3
+4 5 6 
+7 8 9
 >
+> // alternate entry
 > [[22 33 44 55][22 33 44 55]] a!     
-> a.    ;print a memory location
-> 3233
-> ctr.  ; prints all the array
+> ctr.  
 22 33 44 55
 22 33 44 55
 >
-
 > pi a *       
 > ctr.
 69.12 103.67 138.23 172.79
@@ -174,7 +180,7 @@ saving a number as per normal,
 > [2 4 5 6 7] a! 
 > a 3.1 -
 > ctr.
-1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
+1.10 -0.90 -1.90 -2.90 -3.90 
 ```
 complex
 ```
@@ -187,11 +193,11 @@ complex
 >
 >
 >
-> [1 2;3 4]a!
+> [1 2 ; 3 4] a!
 > ctr.
 1 2 
 3 4 
-> [2 3;6 7]b!
+> [2 3 ; 6 7] b!
 > ctr.
 2 3 
 6 7 
@@ -223,7 +229,7 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 3+4i a!
 >
 >  a 1 .* b!
-> b@.
+> b.
 6+8i
 > 
 > [1 2;3 4]a!
@@ -231,7 +237,7 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 1 2 
 3 4 
 >[2 3;6 7]b!
-> b@ ctr.
+> b ctr.
 2 3 
 6 7 
 >
