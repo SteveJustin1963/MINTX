@@ -1,4 +1,5 @@
-# MINTX
+# MINTX (MINT-X)
+
 mathematical operations that can be performed on matrices in mint code
 
 
@@ -257,7 +258,7 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 9 10 11 12
 13 14 15 16
 >
-> a -t ; transpose a
+    > a -t // transpose a using the -t command
 > ctr.
 1 5 9 13
 2 6 10 14
@@ -265,6 +266,38 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 4 8 12 16
 >
 ```
+
+## Determinant
+for 2x2 we use det(A)=ad−bc
+for 3x3 we use det(A)=aei+bfg+cdh−ceg−bdi−afh
+
+```
+> [12  32 ; 33 17] a!
+> a -d
+-852
+```
+
+lets try from complex forms
+```
+> [12i  32 ; 33 17] a!
+> a -d
+-1056+204i
+>
+> [12  32i ; 33 17] a!
+> a -d
+204-1056i
+> [12i  32i ; 33 17] a!
+> a -d
+-852i
+> [12i  32 ; 33 17i] a!
+> a -d
+-1260
+>
+```
+
+
+
+
 
 
 
