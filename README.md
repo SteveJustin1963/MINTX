@@ -76,10 +76,10 @@ saving a number as per normal,
 2
 3
 >
-> a(0-1)?.
+> a(0-1)?.  //same
 1
 2
-3    //same
+3    
 >
 > a ctr.    // show all at once, btw these are never on the stack 
 1
