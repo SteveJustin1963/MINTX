@@ -72,12 +72,17 @@ saving a number as per normal,
 > [1 ; 2 ; 3] ; or [1;2;3] is ok, the `;` makes it row
 > a!
 > .
-3232  
-> a0?. a1?. a2?.  ; it knows its a row<<<<<<<<<<<<<<<
+> 0 ; nothing to show when u stored it in a it was taken off the stack
+> a.
+3232  ; they u are
+> a0-2?.  ; it knows its a row
 1
 2
 3
 >
+> a0?.
+> 1 ; looks like we cant tell if irs row or column
+
 ```
 
  
