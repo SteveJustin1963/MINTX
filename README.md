@@ -64,9 +64,7 @@ saving a number as per normal,
 >
 > a ctr.    // show all at once, btw these are never on the stack 
 1 2 3
->
->
-            // control . show the contents of last instruction, nothing to do with stack
+>          // control . show the contents of last instruction, nothing to do with stack
 ```
 
 ## enter a vector - row
