@@ -148,6 +148,11 @@ saving a number as per normal,
 2211  5004  
 12    3333
 >
+> a ctr .
+2211  5004  2311
+12    3333  7123
+4454  11134 7003
+>
 ```
 
 ## a matrix has multiple rows
