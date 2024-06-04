@@ -128,7 +128,15 @@ saving a number as per normal,
 ```
 ## martrix, n x n
 ```
-> /r[4x4] a!       // fill a 4x4 matrix with rand integers
+> 0[4x4] a!       // fill a 4x4 with 0's
+> ctr.
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+>
+
+> /r[3x3] a!       // fill a 4x4 matrix with rand integers
 > ctr.
 2211  5004  2311
 12    3333  7123
@@ -143,8 +151,8 @@ saving a number as per normal,
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
->               // its knows its a 4x4
-> a(0-1)?.  // show part of the 4x4
+>                   
+> a(0-1)?.         // show part of 
 2211  5004  
 12    3333
 >
@@ -153,14 +161,12 @@ saving a number as per normal,
 12    3333  7123
 4454  11134 7003
 >
-```
-
-## a matrix has multiple rows
-```
+> 
+> // enter another way
 > [1 2 3 ; 4 5 6 ; 7 8 9] a!
 > a.
 3232
-> ctr.  // display the matrix
+> ctr.  
 >
 1 2 3
 4 5 6 
@@ -172,7 +178,7 @@ saving a number as per normal,
 22 33 44 55
 22 33 44 55
 >
-> pi a *       
+> -pi a *       //  π constant ratio = circle's circumference/ diameter approx 3.14159
 > ctr.
 69.12 103.67 138.23 172.79
 69.12 103.67 138.23 172.79
@@ -221,33 +227,34 @@ Multiplies two numerical arrays (elementwise). There are two forms for its use, 
 where a and b are n-dimensional arrays of numerical type. In the first case, the two arguments are the same size, in which case, the output y is the same size as the inputs, and is the element-wise product of a and b. In the second case, either a or b is a scalar, in which case y is the same size as the larger argument, and is the product of the scalar with each element of the other argument. 
 
 ```
-> 3 8 .*
-> .
+> 3 8 * .
 24 
 >
-> 3.1 [2 4 5 6 7] .*
-> .
+> 3.1 [2 4 5 6 7] * . // it knows its elementwise coz its a scalar times a vector
+.2000   12.4000   15.5000   18.6000   21.7000 
 >
-> .2000   12.4000   15.5000   18.6000   21.7000 
+```
+## complex numbers
+
+```
+> 3+4i a!
+> a.
+3+4i
 >
-> 3+4i
-> ".
-3+4i a!
->
->  a 1 .* b!
+>  a 2 * b!
 > b.
 6+8i
 > 
-> [1 2;3 4]a!
+> [1 2 ; 3 4] a!
 >ctr.  
 1 2 
 3 4 
->[2 3;6 7]b!
-> b ctr.
+> [2 3 ; 6 7] b!
+> ctr.
 2 3 
 6 7 
 >
-> a b .*
+> a b *   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 > ctr.
 2  6 
 18 28
