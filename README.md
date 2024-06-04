@@ -49,49 +49,53 @@ saving a number as per normal,
 > 12     // thats better
 > 
 ```
-## enter a vector - column 
-
+## row vector
 ```
-> [1 2 3]
-> a!
-> a.
-3232      // whats this ? its a mem location of the vector, where are the numbers ?
-> a0?. a1?. a2?.    // u cant do a 0?. 1?. 2?. u need the mem location each time
+> [1 2 3] a!    // enter and store in a
+> .             // dispplay it
+> 0             // nothing to show, u stored it in `a` so it was taken off the stack
+> a.            // recall and display          
+3232            // they u are
+> a(0-2)?.      // range 0-2, it knows its a row
 1 2 3
->
-> a(0-1)?.
-1 2 3    //same
->
-> a ctr.    // show all at once, btw these are never on the stack 
-1 2 3
->          // control . show the contents of last instruction, nothing to do with stack
-```
-
-## enter a vector - row
-```
-> [1 ; 2 ; 3]     // or [1;2;3] is ok, the `;` makes it row
-> a!
-> .
-> 0               // nothing to show when u stored it in a it was taken off the stack
-> a.
-3232              // they u are
-> a(0-2)?.        // range 0-2, it knows its a row
-1
-2
-3
 >
 > a0?.
 1 
 >
 ```
 
+## column vector  
+
+```
+> [1 ; 2 ; 3]
+> a!
+> a.
+3232      // ok good
+> a0?. a1?. a2?.    // u cant do a 0?. 1?. 2?. u need the mem location each time
+1
+2
+3
+>
+> a(0-1)?.
+1
+2
+3    //same
+>
+> a ctr.    // show all at once, btw these are never on the stack 
+1
+2
+3
+>
+```
+
  
-## array fill 
+## fill 
 ```
 > [1x4] a!  
 > ctr.      // control . show the contents of last instruction, nothing to do with stack
 1 2 3 4
 >
+> //
 > [4x1] a!
 > ctr.
 1
@@ -100,15 +104,13 @@ saving a number as per normal,
 4
 >
 ```
-## zeros in array
+## zeros 
 
 ```
 > 0[1x4] a! 
 > ctl.
 0 0 0 0
 >
-
-
 > 0[4x1] a!
 > ctr.
 0
