@@ -215,13 +215,29 @@ complex
 
 ## Dot Product and Element-wise Multiplication
 ### Element-wise
-
 ```
+> 2 a! 3 b!
+> a b *.
+> 6
+>
 > [1 2 ; 3 4] a!
 > [5 6 ; 7 8] b!
-> a b * xxxxxxxxxxxxx
-
-
+> a b * // where is the answer? its at mem location only, we need to store it
+> ". // use " so we dont loose the number
+3232
+> c! // saved mem location
+> .
+0
+>
+> c ctr.
+5 12
+21 32
+​> c.
+5 12
+21 32
+>​
+```
+xxx
 
 
 ### Dot Product
@@ -259,7 +275,7 @@ where a and b are n-dimensional arrays of numerical type. In the first case, the
 2 3 
 6 7 
 >
-> a b *   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+> a b *   xxx 
 > ctr.
 2  6 
 18 28
