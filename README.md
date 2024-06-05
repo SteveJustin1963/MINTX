@@ -213,7 +213,11 @@ complex
 ```
 
 
-## Dot Product, Element-wise Multiplication Operator
+## Dot Product and Element-wise Multiplication
+### Element-wise
+
+### Dot Product
+
 
 Multiplies two numerical arrays (elementwise). There are two forms for its use, both with the same general syntax:
   y = a .* b
