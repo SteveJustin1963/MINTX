@@ -173,19 +173,19 @@ saving a number as per normal,
 >
 > -pi a *       //  π constant ratio = circle's circumference/ diameter approx 3.14159
 > ctr.
-69.12 103.67 138.23 172.79
-69.12 103.67 138.23 172.79
+69.120 103.670 138.230 172.790
+69.120 103.670 138.230 172.790
 >
 > a 2 -
 > ctr.
-67.12 101.67 136.23 170.79
-67.12 101.67 136.23 170.79
+67.120 101.670 136.230 170.790
+67.120 101.670 136.230 170.790
 >
 >
 > [2 4 5 6 7] a! 
 > a 3.1 -
 > ctr.
-1.10 -0.90 -1.90 -2.90 -3.90 
+1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
 ```
 complex
 ```
@@ -217,8 +217,9 @@ complex
 ### Element-wise
 ```
 > 2 a! 3 b!
-> a b *.
-> 6
+> a b *
+> .
+6
 >
 > [1 2 ; 3 4] a!
 > [5 6 ; 7 8] b!
@@ -230,30 +231,40 @@ complex
 0
 >
 > c ctr.
-5 12
+5  12
 21 32
 ​> c.
 5 12
 21 32
 >​
+> // try with complex
+>
+> [1i 2 ; 3 4] a!
+> [5 6 ; 7 8] b!
+> a b * c! // just elementwise multiplication 
+> c ctr.
+14+5i	16+6i
+43    50
+>
+> // scalar times a row vector
+> 3.1 [2 4 5 6 7] * . 
+6.2000   12.4000   15.5000   18.6000   21.7000 
+>
+> // scalar times a column vector
+3.1 [2 ; 4 ; 5 ; 6 ; 7] * . 
+6.2000
+12.4000
+15.5000
+18.6000
+21.7000 xxx
+>
 ```
-xxx
-
 
 ### Dot Product
-
-
-Multiplies two numerical arrays (elementwise). There are two forms for its use, both with the same general syntax:
-  y = a .* b
-where a and b are n-dimensional arrays of numerical type. In the first case, the two arguments are the same size, in which case, the output y is the same size as the inputs, and is the element-wise product of a and b. In the second case, either a or b is a scalar, in which case y is the same size as the larger argument, and is the product of the scalar with each element of the other argument. 
-
+For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix. The resulting matrix, known as the matrix product, has the number of rows of the first and the number of columns of the second matrix.
+ 
 ```
-> 3 8 * .
-24 
->
-> 3.1 [2 4 5 6 7] * . // it knows its elementwise coz its a scalar times a vector
-.2000   12.4000   15.5000   18.6000   21.7000 
->
+ 
 ```
 ## complex numbers
 
