@@ -10,25 +10,18 @@ mathematical operations that can be performed on matrices in mint code
  
 
 - **Element-wise** Operations: Performing element-wise operations (e.g., addition, multiplication) between two matrices of the same size. Element-wise operations involve performing arithmetic operations (addition, subtraction, multiplication, division) on corresponding elements of two matrices. These operations can be implemented using simple loops that iterate over the elements of the matrices and perform the desired arithmetic operations using 32-bit integer arithmetic.
-  - Matrix **Addition**: Adding corresponding elements of two matrices to produce a new matrix.
-  - Matrix **Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
-  - Scalar **Multiplication**: Multiplying every element of a matrix by a scalar value.
-  - Matrix **Multiplication**: Multiplying two matrices to produce a new matrix.
-     - involves the dot product of rows and columns.
-- Identity matrix, An identity matrix is a special type of square matrix in which all the elements of the principal diagonal are ones and all other elements are zeros.
-`example 3x3`
-```
-1 0 0
-0 1 0
-0 0 1
-```
+- Matrix **Addition**: Adding corresponding elements of two matrices to produce a new matrix.
+- Matrix **Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
+- Scalar **Multiplication**: Multiplying every element of a matrix by a scalar value.
+- Matrix **Multiplication**: Multiplying two matrices to produce a new matrix.
+- **Identity matrix**, An identity matrix is a special type of square matrix in which all the elements of the principal diagonal are ones and all other elements are zeros.
 - Matrix **Inversion**, Division: Finding the inverse of a matrix, which is a matrix that, when multiplied with the original matrix, yields the identity matrix.
 - **Transpose**: Computing the transpose of a matrix, which involves swapping its rows and columns.
 In terms of 32-bit integer operations, transposing a matrix involves swapping the elements across the main diagonal of the matrix. This can be done efficiently using nested loops to iterate over the rows and columns of the matrix, swapping each element with its corresponding element across the diagonal.
 - **Determinant**: Calculating the determinant of a square matrix, which is a scalar value that represents certain properties of the matrix.
    Computing the determinant of a matrix involves various arithmetic operations such as addition, subtraction, and multiplication of matrix elements. Using methods like expansion by minors or Gaussian elimination, each determinant computation involves a series of arithmetic operations that can be performed using 32-bit integer arithmetic.
--**Trace**: Calculating the trace of a square matrix, which is the sum of the elements on its main diagonal.
-   The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit integer operations, calculating the trace involves adding the diagonal elements of the matrix using a simple loop that iterates over the diagonal elements and accumulates their values.
+- **Trace**: Calculating the trace of a square matrix, which is the sum of the elements on its main diagonal.
+The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit integer operations, calculating the trace involves adding the diagonal elements of the matrix using a simple loop that iterates over the diagonal elements and accumulates their values.
 - **Eigenvalues and Eigenvectors**: Finding the eigenvalues and eigenvectors of a square matrix, which represent certain properties of the matrix under linear transformations. Finding the eigenvalues and eigenvectors of a matrix typically involves solving a characteristic equation or using iterative methods such as the power iteration algorithm. These methods involve repeated multiplication of the matrix by a vector and can be implemented using 32-bit integer arithmetic.
 - **Rank**: Determining the rank of a matrix, which is the maximum number of linearly independent rows or columns in the matrix. Determining the rank of a matrix involves performing Gaussian elimination to reduce the matrix to row-echelon form and counting the number of non-zero rows. This process consists of elementary row operations such as addition, subtraction, and multiplication, which can be carried out using 32-bit integer arithmetic.
 - Matrix **Norms**: Calculating various norms (e.g., Frobenius norm, spectral norm) of a matrix, which measure the magnitude of the matrix. Calculating matrix norms such as the Frobenius norm or spectral norm involves computing the square root of the sum of squares of the matrix elements or finding the maximum singular value, respectively. These computations can be performed using 32-bit integer arithmetic combined with square root operations.
@@ -220,7 +213,7 @@ complex
 ```
 
 
-## DOT TIMES Element-wise Multiplication Operator
+## Dot Product, Element-wise Multiplication Operator
 
 Multiplies two numerical arrays (elementwise). There are two forms for its use, both with the same general syntax:
   y = a .* b
