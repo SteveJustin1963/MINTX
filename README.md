@@ -214,49 +214,47 @@ complex
 
 
 ## Dot Product and Element-wise Multiplication
-### Element-wise
+### Element-wise product
 ```
 > 2 a! 3 b!
 > a b *
 > .
 6
 >
-> [1 2 ; 3 4] a!
-> [5 6 ; 7 8] b!
-> a b * // where is the answer? its at mem location only, we need to store it
-> ". // use " so we dont loose the number
-3232
-> c! // saved mem location
-> .
-0
->
-> c ctr.
-5  12
-21 32
-​> c.
-5 12
-21 32
->​
-> // try with complex
->
-> [1i 2 ; 3 4] a!
-> [5 6 ; 7 8] b!
-> a b * c! // just elementwise multiplication 
-> c ctr.
-14+5i	16+6i
-43    50
->
+
 > // scalar times a row vector
 > 3.1 [2 4 5 6 7] * . 
 6.2000   12.4000   15.5000   18.6000   21.7000 
 >
+
+> // 2x2 
+> [1 2 ; 3 4] a!
+> [5 6 ; 7 8] b!
+> a b * c! // store answer 
+> c ctr.   //lets have a look
+5  12
+21 32
+​>​
+
+> // try complex
+>
+> [1i 2 ; 3 4] a!
+> [5 6 ; 7 8] b!
+> a b * c! // elementwise  
+> c ctr.
+14+5i	16+6i
+43    50
+>
+
+
 > // scalar times a column vector
-3.1 [2 ; 4 ; 5 ; 6 ; 7] * . 
+> 3.1 [2 ; 4 ; 5 ; 6 ; 7] *
+> ctr.
 6.2000
-12.4000
-15.5000
-18.6000
-21.7000 xxx
+12.400
+15.500
+18.600
+21.700
 >
 ```
 
@@ -266,31 +264,7 @@ For matrix multiplication, the number of columns in the first matrix must be equ
 ```
  
 ```
-## complex numbers
 
-```
-> 3+4i a!
-> a.
-3+4i
->
->  a 2 * b!
-> b.
-6+8i
-> 
-> [1 2 ; 3 4] a!
->ctr.  
-1 2 
-3 4 
-> [2 3 ; 6 7] b!
-> ctr.
-2 3 
-6 7 
->
-> a b *   xxx 
-> ctr.
-2  6 
-18 28
-```
 
 ##  transpose a matrix
 
