@@ -45,7 +45,7 @@ saving a number as per normal,
 ## row vector
 ```
 > [1 2 3] a!    // enter and store in a
-> .             // dispplay it
+> .             // display it
 > 0             // nothing to show, u stored it in `a` so it was taken off the stack
 > a.            // recall and display          
 3232            // they u are
@@ -149,7 +149,7 @@ saving a number as per normal,
 2211  5004  
 12    3333
 >
-> a ctr .
+> a ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
