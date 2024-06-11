@@ -286,13 +286,21 @@ For matrix multiplication, the number of columns in the first matrix must be equ
 ```
 
 ## Determinant
-for 2x2 we use det(A)=ad−bc
-for 3x3 we use det(A)=aei+bfg+cdh−ceg−bdi−afh
+- for 2x2 we use det(A)=ad−bc
+- for 3x3 we use det(A)=aei+bfg+cdh−ceg−bdi−afh
+- https://en.wikipedia.org/wiki/Determinant
 
 ```
 > [12  32 ; 33 17] a!
 > a -d
 -852
+
+> //3x3
+> [ 1 2 3 ; 4 5 6 ; 7 8 9] a!
+> a -d
+0
+>
+
 ```
 
 lets try from complex forms
