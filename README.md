@@ -1,4 +1,4 @@
-# MINTX (MINT-X)
+# MINTX; the X for Matrix
 
 mathematical operations that can be performed on matrices in mint code
 
