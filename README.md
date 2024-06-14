@@ -28,7 +28,8 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 - more
      
 
-# Grammar
+# Grammar elementwise
+
 saving a number as per normal, 
 ```
 > 12     // place 12 on the stack
@@ -51,6 +52,18 @@ saving a number as per normal,
 >
 > a0?.
 1 
+> a 3 +
+> ctr.
+4 5 6
+>
+> a(1)?.
+5
+>
+> a 2 *
+> ctr.
+2 4 6
+> a(2)?.
+6
 >
 ```
 
@@ -71,27 +84,37 @@ saving a number as per normal,
 2
 3    
 >
-> a ctr.    // show all at once, btw these are never on the stack 
+> ctr.    // show all at once, btw these are never on the stack 
 1
 2
 3
+>
+> a 2 *
+>ctr.
+2
+4
+6
+>
+> a(0-2)?.
+2
+4
+6
 >
 ```
 
  
-## fill 
+## fill row or column
 ```
 > [1x4] a!  
-> ctr.      // control . show the contents of last instruction, nothing to do with stack
-1 2 3 4
->
-> //
-> [4x1] a!
-> ctr.
+> ctr.      
 1
 2
 3
 4
+>
+> [4x1] a!
+> ctr.
+1 2 3 4
 >
 ```
 ## zeros 
@@ -99,21 +122,18 @@ saving a number as per normal,
 ```
 > 0[1x4] a! 
 > ctl.
-0 0 0 0
+0
+0
+0
+0
 >
 > 0[4x1] a!
 > ctr.
-0
-0
-0
-0
+0 0 0 0
 >
 > 3[4x1]
 > ctr.
-3
-3
-3
-3
+3 3 3 3
 >
 ```
 ## martrix, n x n
@@ -137,12 +157,12 @@ saving a number as per normal,
 > a(1,2)?.
 11134
 >
-> a(0-2)?.
+> a(0-2 ; 2-2)?.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
 >                   
-> a(0-1)?.         // show part of 
+> a(0-0 ; 1-1)?.         // show part of 
 2211  5004  
 12    3333
 >
@@ -157,18 +177,11 @@ saving a number as per normal,
 > a.
 3232
 > ctr.  
->
 1 2 3
 4 5 6 
 7 8 9
 >
-> // alternate entry
-> [[22 33 44 55][22 33 44 55]] a!     
-> ctr.  
-22 33 44 55
-22 33 44 55
->
-> -pi a *       //  π constant ratio = circle's circumference/ diameter approx 3.14159
+> pi a *       //  π 
 > ctr.
 69.120 103.670 138.230 172.790
 69.120 103.670 138.230 172.790
@@ -183,18 +196,14 @@ saving a number as per normal,
 > a 3.1 -
 > ctr.
 1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
-```
-complex
-```
+>
+> // complex
 > 3-4i
 > . 
 3-4i 
-> 2-
-> . 
+> 2 - . 
 1-4i
->
->
->
+> xxx
 > [1 2 ; 3 4] a!
 > ctr.
 1 2 
