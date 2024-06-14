@@ -73,7 +73,7 @@ saving a number as per normal,
 > [1 ; 2 ; 3]
 > a!
 > a.
-3232      // ok good
+3232      // mem location
 > a0?. a1?. a2?.    // u cant do a 0?. 1?. 2?. u need the mem location each time
 1
 2
@@ -84,13 +84,16 @@ saving a number as per normal,
 2
 3    
 >
+> a(1-0)?.  
+er  // dimension error
+>
 > ctr.    // show all at once, btw these are never on the stack 
 1
 2
 3
 >
 > a 2 *
->ctr.
+> ctr.
 2
 4
 6
@@ -121,7 +124,7 @@ saving a number as per normal,
 
 ```
 > 0[1x4] a! 
-> ctl.
+> ctr.
 0
 0
 0
@@ -131,7 +134,7 @@ saving a number as per normal,
 > ctr.
 0 0 0 0
 >
-> 3[4x1]
+> 3[4x1] a! 
 > ctr.
 3 3 3 3
 >
@@ -146,7 +149,7 @@ saving a number as per normal,
 0 0 0 0
 >
 
-> /r[3x3] a!       // fill a 4x4 matrix with rand integers
+> /r[3x3] a!       // fill with random int
 > ctr.
 2211  5004  2311
 12    3333  7123
@@ -157,20 +160,14 @@ saving a number as per normal,
 > a(1,2)?.
 11134
 >
-> a(0-2 ; 2-2)?.
+> a(0-2 ; 2-2)?.   // or ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
 >                   
-> a(0-0 ; 1-1)?.         // show part of 
+> a(0-0 ; 1-1)?.   // show part of 
 2211  5004  
 12    3333
->
-> a ctr.
-2211  5004  2311
-12    3333  7123
-4454  11134 7003
->
 > 
 > // enter another way
 > [1 2 3 ; 4 5 6 ; 7 8 9] a!
@@ -181,19 +178,18 @@ saving a number as per normal,
 4 5 6 
 7 8 9
 >
-> pi a *       //  π 
+> pi a *   //  π, stored in a 
 > ctr.
 69.120 103.670 138.230 172.790
 69.120 103.670 138.230 172.790
 >
-> a 2 -
+> a 2 -  // stored in a
 > ctr.
 67.120 101.670 136.230 170.790
 67.120 101.670 136.230 170.790
->
 >
 > [2 4 5 6 7] a! 
-> a 3.1 -
+> a 3.1 -  // stored in a
 > ctr.
 1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
 >
@@ -203,7 +199,7 @@ saving a number as per normal,
 3-4i 
 > 2 - . 
 1-4i
-> xxx
+> 
 > [1 2 ; 3 4] a!
 > ctr.
 1 2 
@@ -212,15 +208,19 @@ saving a number as per normal,
 > ctr.
 2 3 
 6 7 
-> a b -
+> a b -  // stored in b
 > ctr.
 -1 -1 
--3 -3 
+-3 -3
+> b.
+-1 -1 
+-3 -3
+>
 ```
 
 
-## Dot Product and Element-wise Multiplication
-### Element-wise product
+## Multiplication; Elementwise-Product and Dot-Product 
+### Elementwise-product
 ```
 > 2 a! 3 b!
 > a b *
@@ -264,7 +264,7 @@ saving a number as per normal,
 >
 ```
 
-### Dot Product
+### Dot-Product
 For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix. The resulting matrix, known as the matrix product, has the number of rows of the first and the number of columns of the second matrix.
  
 ```
