@@ -243,7 +243,7 @@ er  // dimension error
 18.600
 21.700
 >
-```
+
 
 > // 2x2 
 > [1 2 ; 3 4] a!
@@ -264,9 +264,6 @@ er  // dimension error
 43    50
 >
 
-
-
-```
 > /r[4x4] a!
 > ctr.
 7 8 1 0
@@ -280,7 +277,8 @@ er  // dimension error
 6 6 3 7
 1 3 2 6
 9 8 3 1
-```
+
+
 > a b * c! // will be a Hadamard product
 > cyt.
 70 93 54 118
@@ -288,6 +286,7 @@ er  // dimension error
 53 63 32 62
 138 169 88 160
 >
+```
 
 
 
