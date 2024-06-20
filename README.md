@@ -11,6 +11,7 @@ mathematical operations that can be performed on matrices in mint code
 - Matrix **Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
 - Scalar **Multiplication**: Multiplying every element of a matrix by a scalar value.
 - Matrix **Multiplication**: Multiplying two matrices to produce a new matrix.
+- Matrix **Multiplication**: Multiplying two matrices to produce a dot product
 - **Identity matrix**, An identity matrix is a special type of square matrix in which all the elements of the principal diagonal are ones and all other elements are zeros.
 - Matrix **Inversion**, Division: Finding the inverse of a matrix, which is a matrix that, when multiplied with the original matrix, yields the identity matrix.
 - **Transpose**: Computing the transpose of a matrix, which involves swapping its rows and columns.
@@ -218,14 +219,9 @@ er  // dimension error
 >
 ```
 
-## Multiplication; Elementwise-Product and Dot-Product 
-
-For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix. The resulting matrix, known as the matrix product, has the number of rows of the first and the number of columns of the second matrix.
-
+## Multiplication
 
 ### Elementwise-product
-
-
 
 ```
 > 2 a! 3 b! // scalar vector 1x1
@@ -251,7 +247,7 @@ For matrix multiplication, the number of columns in the first matrix must be equ
 
 > // 2x2 
 > [1 2 ; 3 4] a!
-> [5 6 ; 7 8] b!
+> [5 6 ; 7 8] b!   mmm
 > a b * c! // store answer 
 > c ctr.   //lets have a look
 5  12
