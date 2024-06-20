@@ -218,20 +218,36 @@ er  // dimension error
 >
 ```
 
-
 ## Multiplication; Elementwise-Product and Dot-Product 
+
+For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix. The resulting matrix, known as the matrix product, has the number of rows of the first and the number of columns of the second matrix.
+
+
 ### Elementwise-product
+
+
+
 ```
-> 2 a! 3 b!
-> a b *
-> .
+> 2 a! 3 b! // scalar vector 1x1
+> a b * .
 6
 >
-
-> // scalar times a row vector
-> 3.1 [2 4 5 6 7] * . 
-6.2000   12.4000   15.5000   18.6000   21.7000 
+> // scalar times row vector
+> 3 [2 4 5 6 7] * . 
+6 12 15 18 21 
 >
+
+
+> // scalar times a column vector
+> 3.1 [2 ; 4 ; 5 ; 6 ; 7] *
+> ctr.
+6.2000
+12.400
+15.500
+18.600
+21.700
+>
+```
 
 > // 2x2 
 > [1 2 ; 3 4] a!
@@ -253,23 +269,32 @@ er  // dimension error
 >
 
 
-> // scalar times a column vector
-> 3.1 [2 ; 4 ; 5 ; 6 ; 7] *
-> ctr.
-6.2000
-12.400
-15.500
-18.600
-21.700
->
-```
 
-### Dot-Product
-For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix. The resulting matrix, known as the matrix product, has the number of rows of the first and the number of columns of the second matrix.
- 
 ```
- 
+> /r[4x4] a!
+> ctr.
+7 8 1 0
+6 0 6 8
+1 3 5 3
+7 6 9 8
+>
+> /r[4x4] b!
+> ctr.
+3 6 4 8
+6 6 3 7
+1 3 2 6
+9 8 3 1
 ```
+> a b * c! // will be a Hadamard product
+> cyt.
+70 93 54 118
+96	118 60 92
+53 63 32 62
+138 169 88 160
+>
+
+
+
 
 
 ##  transpose a matrix
