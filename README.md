@@ -1,4 +1,4 @@
-# the X'y MINT
+X'y MINT  = MINTX
 MINT needs linear algebra aka matrix maths 
 
 ## Grammar, entering etc
