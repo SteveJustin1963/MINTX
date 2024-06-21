@@ -145,7 +145,7 @@ er        // dimension error, wasnt stored that way
 9
 9
 9
->  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+>  xxx
 ```
 ## martrix, n x n
 ```
