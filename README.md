@@ -1,5 +1,4 @@
-X'y MINT  = MINTX
-MINT needs linear algebra aka matrix maths 
+## MINT meets linear algebra aka X'y MINT, MINTX 
 
 ## Grammar, entering etc
 - enter and store vector ( single column or row matrix)
