@@ -38,7 +38,7 @@ eg
 > \[1 2 3]
 > .
 0       // why? coz is in the matrix stack
-> ctr.  // thats better
+> ctr.  // thats better we do this from the console
 1
 2
 3
@@ -178,9 +178,12 @@ ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
-
-//////////// this is for unsigned, but not sure that to do with sign or mixed, JH help!
-
+> -12[0,1]   // change 12 to -12, its still in matrix stack
+> ctr.
+2211  5004  2311
+-12    3333  7123
+4454  11134 7003
+>
 > 
 > a[1,1]?.          // show
 er
@@ -189,12 +192,17 @@ er
 1 4 0
 9 4 5
 4 2 6
+> 9[2,2]
+> ctr.
+1 4 0
+9 4 5
+4 2 9
 > a[2,1]?.
 5
 > a.
 1 4 0
 9 4 5
-4 2 6
+4 2 9
 >                   
 > a[0-0 1-1]?.   // show a range 
 1 4
@@ -219,6 +227,7 @@ er
 > ctr.
 69.120 103.670 138.230 172.790
 69.120 103.670 138.230 172.790
+>a!
 >
 > a 2 -  
 > ctr.
@@ -252,11 +261,41 @@ er
 > ctr.
 -1 -1 
 -3 -3
+> c! 
 > b.
--1 -1 
--3 -3
+2 3
+6 7
+> // same 
+```
+### reshaping
+
+```
+> /r[3x]a!  //save it 
+a.
+1 7 8
+5 7 1
+4 7 7
+> a /p[2x3] a!
+> a.
+1 7
+8 5
+7 1
+> // 1 4 7 7 are truncated
+>
+> /r[3x]a!
+> a.
+3 5 2
+5 8 9
+6 4 6
+> a/p[4x4] a!
+> a.
+3 5 2 5
+8 9 6 4
+6 3 5 2
+> // the last 3 5 2 are back filled from the begging numbers
 >
 ```
+
 
 ## Multiplication
 
