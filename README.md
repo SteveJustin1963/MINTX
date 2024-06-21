@@ -30,6 +30,19 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
      
 
 # Grammar elementwise
+in MINT default arrays are 16 bit words and array of 8 bit byte values by using \ which puts MINT into byte mode.
+in MINTX we will use \[  ] as shortcut for column vectors and ignore 8 bit byte values
+```
+eg
+> \[1 2 3]
+> ctr.
+1
+2
+3
+>
+```
+
+
 
 saving a number as per normal, 
 ```
@@ -71,8 +84,7 @@ saving a number as per normal,
 ## column vector  
 
 ```
-> [1 ; 2 ; 3]
-> a!
+> \[1 2 3] a!
 > a.
 3232      // mem location
 > a0?. a1?. a2?.    // u cant do a 0?. 1?. 2?. u need the mem location each time
@@ -86,14 +98,13 @@ saving a number as per normal,
 3    
 >
 > a(1-0)?.  
-er  // dimension error
->
+er        // dimension error
 > ctr.    // show all at once, btw these are never on the stack 
 1
 2
 3
 >
-> a 2 *
+> a 2 * // result not saved, use eg b!
 > ctr.
 2
 4
@@ -109,17 +120,30 @@ er  // dimension error
  
 ## fill row or column
 ```
-> [1x4] a!  
+> \[1x4] a!  
 > ctr.      
 1
 2
 3
 4
+> // or
+> [4x1] a!   //  no /[
+> ctr.
+1
+2
+3
+4
 >
-> [4x1] a!
+> [1x4] a!
 > ctr.
 1 2 3 4
 >
+>  // other numbers
+> [4x8] a!
+> ctr.
+4 5 6 7 8
+>
+mmmmmmmmmmmmmmmmmmmmmmmm
 ```
 ## zeros 
 
@@ -247,24 +271,25 @@ er  // dimension error
 
 > // 2x2 
 > [1 2 ; 3 4] a!
-> [5 6 ; 7 8] b!   mmm
+> [5 6 ; 7 8] b! 
 > a b * c! // store answer 
-> c ctr.   //lets have a look
+> ctr. // can show last operation
+> c ctr.   // call c if u did other things 
 5  12
 21 32
 ​>​
 
-> // try complex
+> // 2x2 i
 >
 > [1i 2 ; 3 4] a!
 > [5 6 ; 7 8] b!
-> a b * c! // elementwise  
-> c ctr.
+> a b * c!
+> ctr.
 14+5i	16+6i
 43    50
 >
 
-> /r[4x4] a!
+> /r[4x4] a!  //fill random
 > ctr.
 7 8 1 0
 6 0 6 8
@@ -279,15 +304,14 @@ er  // dimension error
 9 8 3 1
 
 
-> a b * c! // will be a Hadamard product
-> cyt.
+> a b * c! 
+> ctr.
 70 93 54 118
 96	118 60 92
 53 63 32 62
 138 169 88 160
 >
 ```
-
 
 
 
