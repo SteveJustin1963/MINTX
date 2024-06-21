@@ -1,6 +1,5 @@
 # the X'y MINT
-
-mathematical operations that can be performed on matrices in mint code
+MINT needs linear algebra aka matrix maths 
 
 ## Grammar, entering etc
 - enter and store vector ( single column or row matrix)
