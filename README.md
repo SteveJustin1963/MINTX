@@ -36,12 +36,14 @@ The use of ( ) is strictly for loops so will not occur in matrix commands.
 ```
 eg
 > \[1 2 3]
-> ctr.
+> .
+0       // why? coz is in the matrix stack
+> ctr.  // thats better
 1
 2
 3
 >
-> // saving a number as per normal,
+> // saving a number as per normal
 >
 > 12 a!  // 12 on the stack and store in a to z
 > .      // show
