@@ -1,4 +1,4 @@
-## X'y MINT for Linear Algebra  
+## Linear Algebra MINT  
 
  
 - enter and store vector ( single column or row matrix)
