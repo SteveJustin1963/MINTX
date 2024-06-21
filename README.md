@@ -59,7 +59,7 @@ saving a number as per normal,
 > 0             // nothing to show, u stored it in `a` so it was taken off the stack
 > a.            // recall and display          
 3232            // the mem location
-> a(0-2)?.      // show range 0-2, it knows its a row
+> a[0-2]?.      // show range 0-2, it knows its a row
 1 2 3
 >
 > a0?.
@@ -68,13 +68,15 @@ saving a number as per normal,
 > ctr.
 4 5 6
 >
-> a(1)?.  //show
+> [1]?.  //show
+er       //error
+> a[1]?.  //better
 5
 >
 > a 2 *
 > ctr.
 2 4 6
-> a(2)?.
+> a[2]?.
 6
 >
 ```
@@ -95,12 +97,12 @@ saving a number as per normal,
 2
 3
 >
-> a(0-2)?.  //same
+> a[0-2]?.  // note the use of - is to find the range in a matrix
 1
 2
 3    
 >
-> a(2-0)?.  
+> a[2-0]?.  
 er        // dimension error, wasnt stored that way
 > ctr.    // show matrix stack 
 1
@@ -113,7 +115,7 @@ er        // dimension error, wasnt stored that way
 4
 6
 >
-> b(0-2)?.
+> b[0-2]?.
 2
 4
 6
@@ -143,7 +145,7 @@ er        // dimension error, wasnt stored that way
 9
 9
 9
->  xxx
+> 
 ```
 ## martrix, n x n
 ```
@@ -161,17 +163,17 @@ er        // dimension error, wasnt stored that way
 12    3333  7123
 4454  11134 7003
 > 
-> a(1,1)?.          // show
+> a[1,1]?.          // show
 3333
-> a(1,2)?.
+> a[1,2]?.
 11134
 >
-> a(0-2 ; 2-2)?.   // or ctr.
+> a[0-2 ; 2-2]?.   // or ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
 >                   
-> a(0-0 ; 1-1)?.   // show part of 
+> a[0-0 ; 1-1]?.   // show part of 
 2211  5004  
 12    3333
 > 
@@ -354,6 +356,8 @@ lets try from complex forms
 
 
 
+## Loops
+ 
 
 
 
