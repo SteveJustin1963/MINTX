@@ -26,37 +26,31 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
      
 
 # Grammar  
-in MINT default arrays are 16 bit words and array of 8 bit byte values by using \ which puts MINT into byte mode.
-in MINTX we will use `\[ ]` as command for column vectors as 8 bit values are redundant in 16
-
-The use of ( ) is strictly for loops so will not occur in matrix commands.
-
-```
-eg
-> \[1 2 3]
-> .
-0       // why? coz is in the matrix stack
-> ctr.  // thats better we do this from the console
-1
-2
-3
->
-> // saving a number as per normal
->
-> 12 a!  // 12 on the stack and store in a to z
+> 12
+> .   //its on the stack
+> 12
+> .  // again
+> 0
+> 12 a!  // 12 stored in a, does not make it to stack
 > .      // show
-er       // no stack value
+0        // nothing on stack     
+> a@.    
+3254    // mem
 > a.
-12     // thats better
-> 
+12  
 ```
 ## row vector
 ```
-> [1 2 3] a!    // enter and store in a
-> .             // display it
-0               // nothing to show, u stored it in `a` so it was taken off the stack
-> a.            // recall and display          
-3232            // the mem location
+> [1 2 3]
+> .
+3233         // stored in memlocation
+> [1 2 3]a!   // enter and store in a
+> .
+0   // nothing
+> a@.
+3422         //location
+> a.            // recall, its finds an array          
+1 2 3            
 > a[0-2]?.      // show range 0-2, it knows its a row
 1 2 3
 > a0?.          // whats in location 0
@@ -77,19 +71,23 @@ er        // error
 6
 >
 ```
+In MINTX, rows use `[ ]` and columns use `\[ ]`.
+In MINT row arrays use \[ ] 16 bit `words` only and 8 bit use `\` buts its redundant as it occurs in in 16 bits 0000000011111111
+The use of ( ) is strictly for loops so will not occur in matrix commands.
+
 
 ## column vector  
-use `\` or `;`
+use `\` and `;` is allowed as well
 ```
 > \[1 2 3] a!
 > a.
 3232      // mem location
-> a ctr.
+> a.
 1
 2
 3
-> [1 2 3 ;]
->ctr.
+> [1 2 3 ;]a!
+> a.
 1
 2
 3
@@ -109,13 +107,13 @@ use `\` or `;`
 3
 > a[2-0]?.  
 er        // dimension error unless we stored it as [1 2 3]a!
-> ctr.    // show matrix stack 
+> a.  
 1
 2
 3
 >
 > a 2 * b!
-> ctr.
+> b.
 2
 4
 6
@@ -130,22 +128,22 @@ er        // dimension error unless we stored it as [1 2 3]a!
 ## zeros 
 ```
 > 0[4] a! 
-> ctr.
+> a.
 0
 0
 0
 0
 >
 > 0\[4] a!
-> ctr.
+> a.
 0 0 0 0
 >
 > 3[4] a! 
-> ctr.
+> a.
 3 3 3 3
 >
 > 9\[4] a! 
-> ctr.
+> a.
 9
 9
 9
@@ -158,59 +156,53 @@ er        // dimension error unless we stored it as [1 2 3]a!
 
 ```
 > [4x]a!       // default fill 4x4 with 0's
-> ctr.
+> a.
 0 0 0 0
 0 0 0 0
 0 0 0 0
 0 0 0 0
 >
 > // spec a number to fill
-> 2[3x]
-ctr.
+> 2[3x]a!
+> a.
 2 2 2
 2 2 2
 2 2 2
 >
-> /r[3x]   // random int fill
-> ctr.
+> /r[3x]a!   // random int fill
+> a.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
-> -12[0,1]   // change 12 to -12, its still in matrix stack
-> ctr.
+> -12[0,1]a!   // change 12 to -12, its still in matrix stack
+> a.
 2211  5004  2311
 -12    3333  7123
 4454  11134 7003
 >
 > 
-> a[1,1]?.          // show
-er
+> a[1,1]?.          // show location
+> 3333
+> 
 > /r[3x]a!  //save it 
-> ctr.  // as we did this again we get diff rand
+> a.  // diff rand
 1 4 0
 9 4 5
 4 2 6
-> 9[2,2]
-> ctr.
-1 4 0
-9 4 5
-4 2 9
-> a[2,1]?.
-5
+> 9[2,2]a!
 > a.
 1 4 0
 9 4 5
 4 2 9
->                   
-> a[0-0 1-1]?.   // show a range 
+> a[2,1]?.
+5                   
+> a[0-0 1-1]?.   // show a range, a[0-0 ; 1-1]?. will work
 1 4
 9 4
 > 
 > // enter another way
 > [1 2 3 ; 4 5 6 ; 7 8 9] a!
 > a.
-3232
-> ctr.  
 1 2 3
 4 5 6 
 7 8 9
