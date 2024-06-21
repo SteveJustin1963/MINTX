@@ -60,17 +60,17 @@ saving a number as per normal,
 > .             // display it
 > 0             // nothing to show, u stored it in `a` so it was taken off the stack
 > a.            // recall and display          
-3232            // they u are
-> a(0-2)?.      // range 0-2, it knows its a row
+3232            // the mem location
+> a(0-2)?.      // show range 0-2, it knows its a row
 1 2 3
 >
 > a0?.
 1 
-> a 3 +
+> a 3 +  // result in matrix stack
 > ctr.
 4 5 6
 >
-> a(1)?.
+> a(1)?.  //show
 5
 >
 > a 2 *
@@ -87,82 +87,65 @@ saving a number as per normal,
 > \[1 2 3] a!
 > a.
 3232      // mem location
-> a0?. a1?. a2?.    // u cant do a 0?. 1?. 2?. u need the mem location each time
+> a ctr.
+1
+2
+3
+> // show individual, need mem location each time
+> a0?. a1?. a2?.    
 1
 2
 3
 >
-> a(0-1)?.  //same
+> a(0-2)?.  //same
 1
 2
 3    
 >
-> a(1-0)?.  
-er        // dimension error
-> ctr.    // show all at once, btw these are never on the stack 
+> a(2-0)?.  
+er        // dimension error, wasnt stored that way
+> ctr.    // show matrix stack 
 1
 2
 3
 >
-> a 2 * // result not saved, use eg b!
+> a 2 * b!
 > ctr.
 2
 4
 6
 >
-> a(0-2)?.
+> b(0-2)?.
 2
 4
 6
 >
 ```
 
- 
-## fill row or column
-```
-> \[1x4] a!  
-> ctr.      
-1
-2
-3
-4
-> // or
-> [4x1] a!   //  no /[
-> ctr.
-1
-2
-3
-4
->
-> [1x4] a!
-> ctr.
-1 2 3 4
->
->  // other numbers
-> [4x8] a!
-> ctr.
-4 5 6 7 8
->
-mmmmmmmmmmmmmmmmmmmmmmmm
-```
 ## zeros 
-
 ```
-> 0[1x4] a! 
+> 0[4] a! 
 > ctr.
 0
 0
 0
 0
 >
-> 0[4x1] a!
+> 0\[4] a!
 > ctr.
 0 0 0 0
 >
-> 3[4x1] a! 
+> 3[4] a! 
 > ctr.
 3 3 3 3
 >
+> 9\[4] a! 
+> ctr.
+9
+9
+9
+9
+>  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ## martrix, n x n
 ```
