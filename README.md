@@ -1,4 +1,4 @@
-## MINT meets linear algebra aka X'y MINT, MINTX 
+## X'y MINT for Linear Algebra  
 
 ## Grammar, entering etc
 - enter and store vector ( single column or row matrix)
