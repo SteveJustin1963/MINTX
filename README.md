@@ -41,33 +41,31 @@ eg
 >
 > // saving a number as per normal,
 >
-> 12     // place 12 on the stack
-> a!     // store the number in a, a to z
-> .
-er    // no stack value
+> 12 a!  // 12 on the stack and store in a to z
+> .      // show
+er       // no stack value
 > a.
-> 12     // thats better
+12     // thats better
 > 
 ```
 ## row vector
 ```
 > [1 2 3] a!    // enter and store in a
 > .             // display it
-> 0             // nothing to show, u stored it in `a` so it was taken off the stack
+0               // nothing to show, u stored it in `a` so it was taken off the stack
 > a.            // recall and display          
 3232            // the mem location
 > a[0-2]?.      // show range 0-2, it knows its a row
 1 2 3
->
-> a0?.
+> a0?.          // whats in location 0
 1 
 > a 3 +  // result in matrix stack
 > ctr.
 4 5 6
 >
-> [1]?.  //show
-er       //error
-> a[1]?.  //better
+> [1]?.   //show whats in 1
+er        // error
+> a[1]?.  // need a variable to show
 5
 >
 > a 2 *
@@ -79,7 +77,7 @@ er       //error
 ```
 
 ## column vector  
-
+use `\` or `;`
 ```
 > \[1 2 3] a!
 > a.
@@ -88,19 +86,27 @@ er       //error
 1
 2
 3
+> [1 2 3 ;]
+>ctr.
+1
+2
+3
+>
 > // show individual, need mem location each time
 > a0?. a1?. a2?.    
 1
 2
 3
 >
-> a[0-2]?.  // note the use of - is to find the range in a matrix
+> a[0-2]?.  // `-` show range
 1
 2
 3    
->
+> a[1-2]?. // show part range
+2
+3
 > a[2-0]?.  
-er        // dimension error, wasnt stored that way
+er        // dimension error unless we stored it as [1 2 3]a!
 > ctr.    // show matrix stack 
 1
 2
@@ -144,35 +150,51 @@ er        // dimension error, wasnt stored that way
 9
 > 
 ```
-## martrix, n x n
+## n x n martrix
+
+\[nx] mix error, no column for n x n
+
 ```
-> 0[4x4] a!       // fill a 4x4 with 0's
+> [4x]a!       // default fill 4x4 with 0's
 > ctr.
 0 0 0 0
 0 0 0 0
 0 0 0 0
 0 0 0 0
 >
-
-> /r[3x3] a!       // fill with random int
+> // spec a number to fill
+> 2[3x]
+ctr.
+2 2 2
+2 2 2
+2 2 2
+>
+> /r[3x]   // random int fill
 > ctr.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
+
+//////////// this is for unsigned, but not sure that to do with sign or mixed, JH help!
+
 > 
 > a[1,1]?.          // show
-3333
-> a[1,2]?.
-11134
->
-> a[0-2 ; 2-2]?.   // or ctr.
-2211  5004  2311
-12    3333  7123
-4454  11134 7003
+er
+> /r[3x]a!  //save it 
+> ctr.  // as we did this again we get diff rand
+1 4 0
+9 4 5
+4 2 6
+> a[2,1]?.
+5
+> a.
+1 4 0
+9 4 5
+4 2 6
 >                   
-> a[0-0 ; 1-1]?.   // show part of 
-2211  5004  
-12    3333
+> a[0-0 1-1]?.   // show a range 
+1 4
+9 4
 > 
 > // enter another way
 > [1 2 3 ; 4 5 6 ; 7 8 9] a!
@@ -183,20 +205,29 @@ er        // dimension error, wasnt stored that way
 4 5 6 
 7 8 9
 >
-> pi a *   //  π, stored in a 
+
+// if we use pi we move into fixed point decimal and that changes everything
+>
+> pi a *   //  π * = stack 
+> .
+0
+> // does not work coz its in matrix stack
 > ctr.
 69.120 103.670 138.230 172.790
 69.120 103.670 138.230 172.790
 >
-> a 2 -  // stored in a
+> a 2 -  
 > ctr.
 67.120 101.670 136.230 170.790
 67.120 101.670 136.230 170.790
 >
-> [2 4 5 6 7] a! 
-> a 3.1 -  // stored in a
+> [2 4 5 6 7]a! 
+> a 3.1 - b! 
 > ctr.
 1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
+> b.
+1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
+
 >
 > // complex
 > 3-4i
@@ -213,7 +244,7 @@ er        // dimension error, wasnt stored that way
 > ctr.
 2 3 
 6 7 
-> a b -  // stored in b
+> a b -  
 > ctr.
 -1 -1 
 -3 -3
