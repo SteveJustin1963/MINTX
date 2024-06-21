@@ -29,7 +29,7 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 in MINT default arrays are 16 bit words and array of 8 bit byte values by using \ which puts MINT into byte mode.
 in MINTX we will use `\[ ]` as command for column vectors as 8 bit values are redundant in 16
 
-The use of ( ) is striclty for loops so will not occur in matrix commands.
+The use of ( ) is strictly for loops so will not occur in matrix commands.
 
 ```
 eg
@@ -39,16 +39,12 @@ eg
 2
 3
 >
-```
-
-
-
-saving a number as per normal, 
-```
+> // saving a number as per normal,
+>
 > 12     // place 12 on the stack
 > a!     // store the number in a, a to z
 > .
-> err    // no stack value
+er    // no stack value
 > a.
 > 12     // thats better
 > 
