@@ -31,7 +31,7 @@ n enter places number on stack
 . removes from stack and displays to default ie terminal
 a-z! stores from a to z
 a@ retrieves memory location of a
-a@. show the me address
+show with .
 
 > 12
 > .   //its on the stack
@@ -48,28 +48,34 @@ a@. show the me address
 ```
 ## row vector
 ```
-[n n n n ...] places numbers on array stack in this cas 1xn locations
-as last action waxxxs array . removes from stack and displays to default ie terminal
-a-z! stores from a to z
-a@ retrieves memory location of a
-a@. show the me address
-
+[n n n n ...] places numbers on array stack and puts mem address on stack
+store in a-z with ! 
+a@ retrieves memory location, or a@. shows
+a retevies contents of address
+a. show whole array
+n[row-col]?. shows a number in array
 
 > [1 2 3]
 > .
 3233         // stored in memlocation
-> [1 2 3]a!   // enter and store in a
+> [1 2 3]a!   // save mem in a
 > .
-0   // nothing
+0  // correct
 > a@.
 3233         //location
-> a.            // recall, its finds an array          
+> a.         // show array          
 1 2 3            
-> a[0-2]?.      // show range 0-2, it knows its a row
+> a[0-2]?.   // show array the hard way
 1 2 3
-> a0?.          // whats in location 0
-1 
-> a 3 + a! // result in matrix stack
+> a[0]?. // so much typing!
+1
+> a0?.    // thats less 
+1
+> a1?.
+2
+> a0-2?.
+er      // 
+> a 3 + a!  // add to the array
 > a.
 4 5 6
 >
@@ -229,37 +235,41 @@ reading a
 
 // if we use pi we move into fixed point decimal and that changes everything
 >
-> pi a *   //  π * = stack 
+> pi a *   //  resolution is half-precision floating-point IEEE 754, 3 or 4 decimal places 
 > .
-0
-> // does not work coz its in matrix stack
-> ctr.
+3244    // mem of answer, we shud have stored it
+> pi a * a!
+> a.
 69.120 103.670 138.230 172.790
 69.120 103.670 138.230 172.790
->a!
 >
-> a 2 -  
-> ctr.
+> a 2 - a!  
+> a.
 67.120 101.670 136.230 170.790
 67.120 101.670 136.230 170.790
 >
 > [2 4 5 6 7]a! 
 > a 3.1 - b! 
-> ctr.
-1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
 > b.
 1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
+```
 
->
-> // complex
+
+### Complex numbers
+
+```
 > 3-4i
 > . 
 3-4i 
 > 2 - . 
 1-4i
-> 
+> 1i - .
+1-5i
+>
+// do with arrays
+>
 > [1 2 ; 3 4] a!
-> ctr.
+> a.
 1 2 
 3 4 
 > [2 3 ; 6 7] b!
@@ -276,7 +286,10 @@ reading a
 6 7
 > // same 
 ```
-### reshaping
+
+
+
+### Reshaping
 
 ```
 > /r[3x]a!  //save it 
@@ -304,6 +317,10 @@ a.
 > // the last 3 5 2 are back filled from the begging numbers
 >
 ```
+
+### Nested arrays
+see https://github.com/orgMINT/MINT?tab=readme-ov-file#arrays
+
 
 
 ## Multiplication
