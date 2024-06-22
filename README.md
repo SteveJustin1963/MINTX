@@ -49,15 +49,15 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 > .
 0   // nothing
 > a@.
-3422         //location
+3233         //location
 > a.            // recall, its finds an array          
 1 2 3            
 > a[0-2]?.      // show range 0-2, it knows its a row
 1 2 3
 > a0?.          // whats in location 0
 1 
-> a 3 +  // result in matrix stack
-> ctr.
+> a 3 + a! // result in matrix stack
+> a.
 4 5 6
 >
 > [1]?.   //show whats in 1
@@ -65,11 +65,11 @@ er        // error
 > a[1]?.  // need a variable to show
 5
 >
-> a 2 *
-> ctr.
-2 4 6
+> a 2 * a!
+> a.
+8 10 12
 > a[2]?.
-6
+12
 >
 ```
 In MINTX, rows use `[ ]` and columns use `\[ ]`.
