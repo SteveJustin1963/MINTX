@@ -27,6 +27,8 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 
 # Grammar  
 ```
+
+error shown as er
 n enter places number on stack
 . removes from stack and displays to default ie terminal
 a-z! stores from a to z
@@ -47,13 +49,20 @@ show with .
 12  
 ```
 ## row vector
+we always need square brackets [n...] to know between arrays and operations
 ```
+> [3 4] 3*  // multiply array by 3
+> [3 4]a!
+> a3 n* vs a[3] n* xxx
+
 [n n n n ...] places numbers on array stack and puts mem address on stack
 store in a-z with ! 
 a@ retrieves memory location, or a@. shows
 a retrieves contents of address
 a. show whole array
 n[row-col]?. shows a number in array
+use ? to find an item in the array
+
 
 > [1 2 3]
 > .
@@ -64,30 +73,28 @@ n[row-col]?. shows a number in array
 > a@.
 3233         //location
 > a.         // show array          
-1 2 3            
-> a[0-2]?.   // show array the hard way
 1 2 3
-> a[0]?. // so much typing!
+
+> 
+> a[0-2].
+1 2 3
+>
+> a[0].    
 1
-> a0?.    // thats less 
-1
-> a1?.
+> a[1].
 2
-> a0-2?.
-er      // 
-> a 3 + a!  // add to the array
+
+> a[3] + a!
 > a.
 4 5 6
 >
-> [1]?.   //show whats in 1
-er        // error
-> a[1]?.  // need a variable to show
+> a[1].  // [1]?.  er        
 5
 >
 > a 2 * a!
 > a.
 8 10 12
-> a[2]?.
+> a[2].
 12
 >
 ```
@@ -319,7 +326,13 @@ a.
 ```
 
 ### Nested arrays
-see https://github.com/orgMINT/MINT?tab=readme-ov-file#arrays
+
+Arrays can be nested inside one another. This code accesses the second item of the first array with 1?. It then accesses the first item of the inner array with 0? and prints the result (which is 2).
+
+> [1 [2 3]] a! 
+> a1a0.  // find second then first
+> 2
+> 
 
 
 
