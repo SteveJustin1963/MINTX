@@ -102,9 +102,10 @@ er
 >
 
 ```
-Rows use `[ ]` and columns use `\[ ]`.  xxx
-In MINT row arrays use \[ ] 16 bit `words` only and 8 bit use `\` buts its redundant as it occurs in 16 bits 0000000011111111
-The use of ( ) is strictly for loops so will not occur in matrix commands.
+- MINTX array rows use `[ ]` and columns use `\[ ]`.  
+- MINT array row use [ ] as 16 bit `words`
+- for 8 bit use \[ ] buts its redundant 16 bits 0000000011111111 includes it 
+- use ( ) strictly for loops not in array matrix commands
 
 
 ## column vector  
@@ -117,7 +118,7 @@ use `\`
 1
 2
 3
-> [1 2 3 ;]a!  //`;` is allowed as well
+> [1 2 3 ;]a!  // use of `;` allowed to place in column, for matrix [n..;n..;n..;..]
 > a.
 1
 2
@@ -149,7 +150,7 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 4
 6
 >
-> b[0-2]?.
+> b[0-2]?.  or b.
 2
 4
 6
@@ -158,16 +159,16 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 
 ## zeros 
 ```
-> 0[4] a! 
-> a.
-0
-0
-0
-0
->
-> 0 \[4] a!  // or  0\[4]a! spaces wont mater
+> 0[4] a!  
 > a.
 0 0 0 0
+>
+> 0\[4]a!  // or 0[4;]a!   
+> a.
+0
+0
+0
+0
 >
 > 3[4] a! 
 > a.
@@ -183,7 +184,8 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 ```
 ## n x n matrix
 ```
-x for constructing array and `,` for finding or inserting 
+- x for making nxm matrix
+- , for finding or inserting xxx 
 for n[nx] put n's into a n x n square, no n results in 0's
 for n[nxm] puts n's into a n x m rectangle 
 error for \[nx] and \[nxm] as redundant 
