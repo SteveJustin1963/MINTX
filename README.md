@@ -73,21 +73,21 @@ er        // error
 >
 ```
 In MINTX, rows use `[ ]` and columns use `\[ ]`.
-In MINT row arrays use \[ ] 16 bit `words` only and 8 bit use `\` buts its redundant as it occurs in in 16 bits 0000000011111111
+In MINT row arrays use \[ ] 16 bit `words` only and 8 bit use `\` buts its redundant as it occurs in 16 bits 0000000011111111
 The use of ( ) is strictly for loops so will not occur in matrix commands.
 
 
 ## column vector  
-use `\` and `;` is allowed as well
+use `\`   
 ```
 > \[1 2 3] a!
-> a.
+> a@.
 3232      // mem location
 > a.
 1
 2
 3
-> [1 2 3 ;]a!
+> [1 2 3 ;]a!  //`;` is allowed as well
 > a.
 1
 2
@@ -107,7 +107,7 @@ use `\` and `;` is allowed as well
 2
 3
 > a[2-0]?.  
-er        // dimension error unless we stored it as [1 2 3]a!
+er        // dimension error unless we stored it as row of [1 2 3]a! 
 > a.  
 1
 2
@@ -135,7 +135,7 @@ er        // dimension error unless we stored it as [1 2 3]a!
 0
 0
 >
-> 0\[4] a!
+> 0 \[4] a!  // or  0\[4]a! spaces wont mater
 > a.
 0 0 0 0
 >
@@ -143,7 +143,7 @@ er        // dimension error unless we stored it as [1 2 3]a!
 > a.
 3 3 3 3
 >
-> 9\[4] a! 
+> 9\[4]a! 
 > a.
 9
 9
@@ -152,9 +152,9 @@ er        // dimension error unless we stored it as [1 2 3]a!
 > 
 ```
 ## n x n martrix
-
-\[nx] mix error, no column for n x n
-
+for `[nx]` =  n x n
+for [n x m] = n x m, 3x4
+for \[nx]    xxx
 ```
 > [4x]a!       // default fill 4x4 with 0's
 > a.
