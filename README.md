@@ -157,151 +157,6 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 >
 ```
 
-## zeros 
-```
-> 0[4] a!  
-> a.
-0 0 0 0
->
-> 0\[4]a!  // or 0[4;]a!   
-> a.
-0
-0
-0
-0
->
-> 3[4] a! 
-> a.
-3 3 3 3
->
-> 9\[4]a! 
-> a.
-9
-9
-9
-9
-> 
-```
-## n x n matrix
-```
-- x for making nxm matrix
-- , for finding or inserting xxx 
-for n[nx] put n's into a n x n square, no n results in 0's
-for n[nxm] puts n's into a n x m rectangle 
-error for \[nx] and \[nxm] as redundant 
-inserting n[n,m] puts n into location n,m, n=m allowed 
-reading a
-
-
-> [4x]a!       // default fill 4x4 with 0's
-> a.
-0 0 0 0
-0 0 0 0
-0 0 0 0
-0 0 0 0
->
-> // spec a number to fill
-> 2[3x]a!
-> a.
-2 2 2
-2 2 2
-2 2 2
->
-> /r[3x]a!   // random int fill
-> a.
-2211  5004  2311
-12    3333  7123
-4454  11134 7003
-> -12[0,1]a!   // change 12 to -12, its still in matrix stack xxx
-> a.
-2211  5004  2311
--12    3333  7123
-4454  11134 7003
->
-> 
-> a[1,1]?.          // show location
-> 3333
-> 
-> /r[3x]a!  //save it 
-> a.  // diff rand
-1 4 0
-9 4 5
-4 2 6
-> 9[2,2]a!
-> a.
-1 4 0
-9 4 5
-4 2 9
-> a[2,1]?.
-5                   
-> a[0-0 1-1]?.   // show a range, a[0-0 ; 1-1]?. will work
-1 4
-9 4
-> 
-> // enter another way
-> [1 2 3 ; 4 5 6 ; 7 8 9] a!
-> a.
-1 2 3
-4 5 6 
-7 8 9
->
-
-// if we use pi we move into fixed point decimal and that changes everything
->
-> pi a *   //  resolution is half-precision floating-point IEEE 754, 3 or 4 decimal places 
-> .
-3244    // mem of answer, we should have stored it
-> pi a * a!
-> a.
-69.120 103.670 138.230 172.790
-69.120 103.670 138.230 172.790
->
-> a 2 - a!  
-> a.
-67.120 101.670 136.230 170.790
-67.120 101.670 136.230 170.790
->
-> [2 4 5 6 7]a! 
-> a 3.1 - b! 
-> b.
-1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
-```
-
-
-### Complex numbers
-
-```
-> 3-4i
-> . 
-3-4i 
-> 2 - . 
-1-4i
-> 1i - .
-1-5i
->
-// do with arrays
->
-> [1 2 ; 3 4] a!
-> a.
-1 2 
-3 4 
-> [2 3 ; 6 7] b!
-> ctr.
-2 3 
-6 7 
-> a b -  
-> ctr.
--1 -1 
--3 -3
-> c! 
-> b.
-2 3
-6 7
-> // same 
-```
-
-
-
 ### Reshaping
 
 ```
@@ -331,6 +186,184 @@ a.
 >
 ```
 
+## zeros 
+```
+> 0[4] a!  
+> a.
+0 0 0 0
+>
+> 0\[4]a!  // or 0[4;]a!   
+> a.
+0
+0
+0
+0
+>
+> 3[4] a! 
+> a.
+3 3 3 3
+>
+> 9\[4]a! 
+> a.
+9
+9
+9
+9
+> 
+```
+## n x n matrix
+```
+- n can = m 
+- no n or m = 0
+- x for making nxm matrix
+- , for finding n,m inserting 
+- for n[nx] put n into n x n square
+- for n[nxm] put n into n x m rectangle 
+- \[nx] or \[nxm] = er 
+- n[n,m] put n into n,m location 
+
+
+> [4x]a!      
+> a.
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+>
+> 2[3x]a!
+> a.
+2 2 2
+2 2 2
+2 2 2
+>
+> /r[3x]a!   // `/r` random integer 
+> a.
+2211  5004  2311
+12    3333  7123
+4454  11134 7003
+> /rd[2x]a!   //  `/rd` random 3dec place
+22.110 5.004 
+45.100 99.999
+>
+> -12[0,1]a!   // change 12 to -12, its still in matrix stack xxx
+> a.
+2211  5004  2311
+-12    3333  7123
+4454  11134 7003
+>
+> a[1,1]?.         
+> 3333
+> 
+> 1[3x]a!  // fill with 1's
+> a /r * a! a.
+1 4 100
+9 4 5
+4 2 6
+> 9[2,2]a!
+> a.
+1 4 100
+9 4 5
+4 2 9
+> a[2,1]?.
+5                   
+> a[0-0 1-1]?.   // show a range, a[0-0 ; 1-1]?. will work
+1 4
+9 4
+> 
+> // enter another way
+> [1 2 3 ; 4 5 6 ; 7 8 9] a!
+> a.
+1 2 3
+4 5 6 
+7 8 9
+>
+
+// MINTX pi uses 3 dec place floating-point IEEE 754
+>
+> pi a * a!
+> a.
+69.120 103.670 138.230 172.790
+69.120 103.670 138.230 172.790
+>
+> a 2 - a!  
+> a.
+67.120 101.670 136.230 170.790
+67.120 101.670 136.230 170.790
+>
+> [2 4 5 6 7]a! 
+> a 3.1 - a! 
+> a.
+1.1000 -0.9000 -1.9000 -2.9000 -3.9000 
+```
+
+
+### Complex numbers
+
+```
+// stack
+> 3-4i
+> . 
+3-4i 
+> 2 - . 
+1-4i
+> 1i - .
+1-5i
+>
+// arrays
+> /ri [2x] a!  // /`ri` random imaginary also /rid for random imaginary dec 
+> a.
+1+3i 2-1i 
+3 4+4i 
+> [2 3 ; 6 7] b!
+> b.
+2 3
+6 7
+> a b - c! c.
+-1+3i -1-i
+-3, -3+4i
+> a b + c! c.
+3+3i 5-i
+9 11+4i
+> a b * c! c.
+4 17+2i
+30+24i 37+28i
+>
+
+```
+### fractional integers
+
+```
+> /r[3x]a!
+> a.
+>
+1 6 5
+8 7 3
+3 8 3
+> [1 1/2 3 ; 4/5 6 7/8 ; 9 11/16 4/3 ] b!
+> a b + c! c.
+2 2/3 4
+9/5 7 15/8
+10 27/16 7/3
+> ​a b - c! c.
+0 -1/2 2
+-1/5 5 -1/8
+8 -5/16 1/3
+> ​a b * c! c.
+9/2 9/2 9/2
+307/40 307/40 307/40
+529/48 529/48 529/48
+> ​a b / c! c.
+er
+>
+
+  
+​
+ 
+​
+
+
+
+```
 ### Nested arrays
 
 Arrays can be nested inside one another. This code accesses the second item of the first array with 1?. It then accesses the first item of the inner array with 0? and prints the result (which is 2).
