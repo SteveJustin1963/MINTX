@@ -109,7 +109,8 @@ er
 
 
 ## column vector  
-use `\`   
+use `\`  or `;`
+
 ```
 > \[1 2 3] a!
 > a@.
@@ -118,13 +119,13 @@ use `\`
 1
 2
 3
-> [1 2 3 ;]a!  // use of `;` allowed to place in column, for matrix [n..;n..;n..;..]
+> [1 2 3 ;]a!  //  `;` allowed and matrix [n..; n..; n..; ..]
 > a.
 1
 2
 3
 >
-> // show individual, need mem location each time
+> // need label each time
 > a0?. a1?. a2?.    
 1
 2
@@ -160,29 +161,29 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 ### Reshaping
 
 ```
-> /r[3x]a!  //save it 
+> /r[3x]a! 
 a.
 1 7 8
 5 7 1
 4 7 7
-> a /p[2x3] a!
+> /p a[2x3] a!  // 8 1 7 sliced off
 > a.
-1 7
-8 5
-7 1
-> // 1 4 7 7 are truncated
+1 7 
+5 7 
+4 7 
+>
 >
 > /r[3x]a!
 > a.
 3 5 2
 5 8 9
 6 4 6
-> a /p[4x4] a!
+> a /p[4x4] a!   // expanding cloning
 > a.
-3 5 2 5
-8 9 6 4
-6 3 5 2
-> // the last 3 5 2 are back filled from the begging numbers
+3 5 2 2
+5 8 9 9
+6 4 6 6
+6 4 6 6
 >
 ```
 
