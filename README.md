@@ -153,11 +153,11 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 ```
 ## n x n martrix
 ```
-for n[nx] =  n in n x n
-for  = n x m, 3x4
+`x` for buld `,` for finding and inserting xxx
+for n[nx] =  n's into n x n square, no n results in 0's
+for n[nxm] = n x m, eg 3x4
 \[nx] and \[nxm] is redundant = er  //error
-
-xxx
+inserting n[n,m]a!  // put n into location n,m 
 
 > [4x]a!       // default fill 4x4 with 0's
 > a.
@@ -178,7 +178,7 @@ xxx
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
-> -12[0,1]a!   // change 12 to -12, its still in matrix stack
+> -12[0,1]a!   // change 12 to -12, its still in matrix stack xxx
 > a.
 2211  5004  2311
 -12    3333  7123
