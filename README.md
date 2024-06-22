@@ -27,6 +27,12 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 
 # Grammar  
 ```
+n enter places number on stack
+. removes from stack and displays to default ie terminal
+a-z! stores from a to z
+a@ retrieves memory location of a
+a@. show the me address
+
 > 12
 > .   //its on the stack
 > 12
@@ -42,6 +48,13 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 ```
 ## row vector
 ```
+[n n n n ...] places numbers on array stack in this cas 1xn locations
+as last action waxxxs array . removes from stack and displays to default ie terminal
+a-z! stores from a to z
+a@ retrieves memory location of a
+a@. show the me address
+
+
 > [1 2 3]
 > .
 3233         // stored in memlocation
@@ -153,11 +166,13 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 ```
 ## n x n martrix
 ```
-`x` for buld `,` for finding and inserting xxx
-for n[nx] =  n's into n x n square, no n results in 0's
-for n[nxm] = n x m, eg 3x4
-\[nx] and \[nxm] is redundant = er  //error
-inserting n[n,m]a!  // put n into location n,m 
+`x` for bulding and `,` for finding or inserting 
+for n[nx] put n's into a n x n square, no n results in 0's
+for n[nxm] puts n's into a n x m rectangle 
+error for \[nx] and \[nxm] as redundant 
+inserting n[n,m] puts n into location n,m, n=m allowed 
+reading a
+
 
 > [4x]a!       // default fill 4x4 with 0's
 > a.
