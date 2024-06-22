@@ -152,10 +152,13 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 > 
 ```
 ## n x n martrix
-for `[nx]` =  n x n
-for [n x m] = n x m, 3x4
-for \[nx]    xxx
 ```
+for n[nx] =  n in n x n
+for  = n x m, 3x4
+\[nx] and \[nxm] is redundant = er  //error
+
+xxx
+
 > [4x]a!       // default fill 4x4 with 0's
 > a.
 0 0 0 0
