@@ -49,7 +49,7 @@ show with .
 12  
 ```
 ## row vector
-we always need square brackets [n...] to know between arrays and operations
+we always need square brackets [n...] to know between arrays and number operations
 ```
 > [3 4] 3*  // multiply array by 3
 > [3 4]a!
