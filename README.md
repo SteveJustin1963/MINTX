@@ -26,6 +26,7 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
      
 
 # Grammar  
+```
 > 12
 > .   //its on the stack
 > 12
