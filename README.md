@@ -27,42 +27,41 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 
 # Grammar  
 ```
-
 error shown as er
-n enter places number on stack
+n places number on stack
 . removes from stack and displays to default ie terminal
-a-z! stores from a to z
+a-z! stores from a to z ie a! 
 a@ retrieves memory location of a
-show with .
 
 > 12
-> .   //its on the stack
+>
+> .   
 > 12
-> .  // again
+> .  
 > 0
-> 12 a!  // 12 stored in a, does not make it to stack
-> .      // show
-0        // nothing on stack     
+> 12 a!  
+> .      
+0             
 > a@.    
 3254    // mem
 > a.
-12  
+12
+> a 2 * .
+24
+> 
 ```
 ## row vector
 we always need square brackets [n...] to know between arrays and number operations
 ```
-> [3 4] 3*  // multiply array by 3
-> [3 4]a!
-> a3 n* vs a[3] n* xxx
-
-[n n n n ...] places numbers on array stack and puts mem address on stack
-store in a-z with ! 
-a@ retrieves memory location, or a@. shows
+[n n n ..] places numbers on array stack and puts mem address on stack
+[ n n n ..] a! store in a-z with ! 
+a@ retrieves memory location, a@. shows it
 a retrieves contents of address
-a. show whole array
-n[row-col]?. shows a number in array
-use ? to find an item in the array
-
+a. show whole array, b c d e .... z
+n[row-col] places n into row-col
+use ? to find an number in the array n[row-col]?. 
+[3 4] a!
+a 3*  multiply array by 3
 
 > [1 2 3]
 > .
@@ -74,7 +73,6 @@ use ? to find an item in the array
 3233         //location
 > a.         // show array          
 1 2 3
-
 > 
 > a[0-2].
 1 2 3
@@ -83,22 +81,28 @@ use ? to find an item in the array
 1
 > a[1].
 2
-
 > a[3] + a!
 > a.
 4 5 6
 >
-> a[1].  // [1]?.  er        
+> a?.
+er
+> a[1].
+er
+> [1]?.
+er        
+> a[1]?.  // use proper syntax
 5
 >
 > a 2 * a!
 > a.
 8 10 12
-> a[2].
+> a[2]?.
 12
 >
+
 ```
-In MINTX, rows use `[ ]` and columns use `\[ ]`.
+Rows use `[ ]` and columns use `\[ ]`.  xxx
 In MINT row arrays use \[ ] 16 bit `words` only and 8 bit use `\` buts its redundant as it occurs in 16 bits 0000000011111111
 The use of ( ) is strictly for loops so will not occur in matrix commands.
 
