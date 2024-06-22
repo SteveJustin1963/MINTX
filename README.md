@@ -1,7 +1,7 @@
 ## MINTX features
 ### Linear Algebra
 
-- enter and store vector ( single column or row matrix)
+- Grammar; single column and row matrix
 - **Element-wise** Operations: Performing element-wise operations (e.g., addition, multiplication) between two matrices of the same size. Element-wise operations involve performing arithmetic operations (addition, subtraction, multiplication, division) on corresponding elements of two matrices. These operations can be implemented using simple loops that iterate over the elements of the matrices and perform the desired arithmetic operations using 32-bit integer arithmetic.
 - Matrix **Addition**: Adding corresponding elements of two matrices to produce a new matrix.
 - Matrix **Subtraction**: Subtracting corresponding elements of two matrices to produce a new matrix.
