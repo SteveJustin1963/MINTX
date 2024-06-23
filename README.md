@@ -34,12 +34,12 @@ Total: \( 26 \)
 ### 2. Lowercase Letter Followed by a Single Digit: `a0` to `a9`, `b0` to `b9`, ..., `z0` to `z9`
 For each of the 26 letters, there are 10 possible digits (0-9).
 
-Total: \( 26 \times 10 = 260 \)
+Total: \( 26 * 10 = 260 \)
 
 ### 3. Two Lowercase Letters: `aa`, `ab`, ..., `az`, `ba`, ..., `zz`
 Each of the two positions can be any of the 26 letters.
 
-Total: \( 26 \times 26 = 676 \)
+Total: \( 26 * 26 = 676 \)
 
 ### Overall Total
 To find the total number of combinations for all specified formats, sum the totals from each format:
