@@ -31,9 +31,11 @@ To find the total number of combinations for all specified formats, sum the tota
 - error return `er`
 - n places number on stack
 - . removes from stack and displays to default ie terminal
-- ! stores 
-- @ retrieves memory location of label
-- `label` reference contents of it 
+- ! stores, store a number needs a label ie 12 a! 
+- n@ retrieves memory location contents eg 3323@ --> 25333 or #62F5 (depends on mode) stored as 16 bits
+- a@ gets the mem address of label eg a@ --> 3233
+- a b ... just the label gets the ref to the contents
+-  
 
 ```
 > 12
@@ -413,7 +415,6 @@ Arrays can be nested inside one another. This code accesses the second item of t
 > a1a0.  // find second then first
 > 2
 > 
-
 
 
 ## Multiplication
