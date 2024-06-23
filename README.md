@@ -24,15 +24,48 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 - Solving **Linear Equations**: Using matrices to represent systems of linear equations and solving them using techniques like Gaussian elimination or matrix inversion. Solving systems of linear equations involves performing matrix operations such as inversion, multiplication, and factorization. These operations can be implemented using 32-bit integer arithmetic along with techniques like Gaussian elimination or matrix factorisation algorithms
 - more
      
+## labels
+
+### 1. Single Lowercase Letters: `a` to `z`
+There are 26 letters in the English alphabet.
+
+Total: \( 26 \)
+
+### 2. Lowercase Letter Followed by a Single Digit: `a0` to `a9`, `b0` to `b9`, ..., `z0` to `z9`
+For each of the 26 letters, there are 10 possible digits (0-9).
+
+Total: \( 26 \times 10 = 260 \)
+
+### 3. Two Lowercase Letters: `aa`, `ab`, ..., `az`, `ba`, ..., `zz`
+Each of the two positions can be any of the 26 letters.
+
+Total: \( 26 \times 26 = 676 \)
+
+### 4. Lowercase Letter Followed by Another Lowercase Letter and a Digit: `aa0` to `aa9`, `ab0` to `ab9`, ..., `zz0` to `zz9`
+For each of the 676 combinations of two letters, there are 10 possible digits (0-9).
+
+Total: \( 676 \times 10 = 6760 \)
+
+### Overall Total
+To find the total number of combinations for all specified formats, sum the totals from each format:
+
+\[
+26 + 260 + 676 + 6760 = 7722
+\]
+
+So, there are 7722 possible combinations for the given formats.
+
+
 
 # Grammar  
-```
-error shown as er
-n places number on stack
-. removes from stack and displays to default ie terminal
-a-z! stores from a to z ie a! 
-a@ retrieves memory location of a
+- error return `er`
+- n places number on stack
+- . removes from stack and displays to default ie terminal
+- ! stores 
+- @ retrieves memory location of label
+- `label` reference contents of it 
 
+```
 > 12
 >
 > .   
