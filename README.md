@@ -105,10 +105,10 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 
 
 ## Arrays
--  [ ] for arrays
--  ( ) for loops
-- use numbers n
-- use labels a - z
+- `[ ]` for arrays
+- `( )` for loops
+- use numbers `n`
+- use labels `a - z`
 - nesting `[   [ ]  ] , [  () ], (  () ),` etc
 - 
 
