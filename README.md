@@ -1,5 +1,5 @@
 ## MINTX  
-MINTX is a build on MINT with modifications
+MINTX extends MINT with linear algebra
 
 
 
