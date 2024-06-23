@@ -31,12 +31,6 @@ To find the total number of combinations for all specified formats, sum the tota
 - error return `er`
 - n places number on stack
 - . removes from stack and displays to default ie terminal
-- ! stores, store a number needs a label ie 12 a! 
-- n@ retrieves memory location contents eg 3323@ --> 25333 or #62F5 (depends on mode) stored as 16 bits
-- a@ gets the mem address of label eg a@ --> 3233
-- a b ... just the label gets the ref to the contents
--  
-
 ```
 > 12
 >
@@ -44,6 +38,9 @@ To find the total number of combinations for all specified formats, sum the tota
 > 12
 > .  
 > 0
+```
+- ! stores, store a number needs a label ie 12 a!
+```
 > 12 a!  
 > .      
 0             
@@ -51,7 +48,20 @@ To find the total number of combinations for all specified formats, sum the tota
 3254    // mem
 > a.
 12
-> a 2 * .
+```
+- n@ retrieves memory location contents
+```
+> 3323@
+25333 // or #62F5 (depends on mode) stored as 16 bits
+```
+- a@ gets the mem address of label
+```
+> a@
+3233
+```
+- just the label gets the ref to the contents eg
+```
+> 12a! a 2 * .
 24
 >
 ```
