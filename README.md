@@ -30,7 +30,7 @@ To find the total number of combinations for all specified formats, sum the tota
 ## Grammar  
 - error return `er`
 - n places number on stack
-- . show and pop stack and remove displays to default ie terminal
+- . show and pop stack   or last operation without saving
 - a. show and pop label, n or array
 - ctr. show array stack without pop
  
