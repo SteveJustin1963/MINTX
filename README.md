@@ -1,5 +1,5 @@
 ## MINTX  
-MINTX extends MINT with linear algebra
+MINTX extends MINT with linear algebra with syntax changes
 
 
 
