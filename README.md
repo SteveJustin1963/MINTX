@@ -48,10 +48,18 @@ a@ retrieves memory location of a
 12
 > a 2 * .
 24
-> 
+>
 ```
+
+## Arrays
+-  [ ] for arrays, ( ) for loops
+- use numbers n
+- use labels a - z
+- nesting [   [ ]  ] , [  () ], (  () ), etc
+- 
+
 ## row vector
-we always need square brackets [n...] to know between arrays and number operations
+
 ```
 [n n n ..] places numbers on array stack and puts mem address on stack
 [ n n n ..] a! store in a-z with ! 
@@ -159,6 +167,11 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 ```
 
 ### Reshaping
+- shorter / longer vector 1 dimension
+- shorter / longer matrix 2 dimension, change nxm or nxn
+- order, +ve, -ve
+- 
+
 
 ```
 > /r[3x]a! 
@@ -166,11 +179,11 @@ a.
 1 7 8
 5 7 1
 4 7 7
-> /p a[2x3] a!  // 8 1 7 sliced off
+> /p a[2x3] a!  //
 > a.
-1 7 
-5 7 
-4 7 
+1 7 8
+5 7 1
+4 7 7
 >
 >
 > /r[3x]a!
