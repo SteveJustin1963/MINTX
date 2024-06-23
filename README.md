@@ -41,19 +41,14 @@ Each of the two positions can be any of the 26 letters.
 
 Total: \( 26 \times 26 = 676 \)
 
-### 4. Lowercase Letter Followed by Another Lowercase Letter and a Digit: `aa0` to `aa9`, `ab0` to `ab9`, ..., `zz0` to `zz9`
-For each of the 676 combinations of two letters, there are 10 possible digits (0-9).
-
-Total: \( 676 \times 10 = 6760 \)
-
 ### Overall Total
 To find the total number of combinations for all specified formats, sum the totals from each format:
 
 \[
-26 + 260 + 676 + 6760 = 7722
+26 + 260 + 676  = 962 combinations
 \]
 
-So, there are 7722 possible combinations for the given formats.
+ 
 
 
 
