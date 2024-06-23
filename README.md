@@ -376,7 +376,7 @@ MINTX pi uses 3 dec place floating-point IEEE 754
 >   
 ```
 
-### Fraction -Integers  + - *
+### Fraction Integers
 
 ```
 > /r[3x]a!
