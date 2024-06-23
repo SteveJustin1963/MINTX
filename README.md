@@ -39,20 +39,25 @@ To find the total number of combinations for all specified formats, sum the tota
 > .  
 > 0
 ```
-- ! stores, store a number needs a label ie 12 a!
+- ! stores
 ```
+> 12!
+> .
+2334      // address of where 12 was stored, better to use label
 > 12 a!  
 > .      
-0             
+0         // address of 12 = a so nothing on stack
 > a@.    
-3254    // mem
-> a.
+3254      // thats the address
+> a.      //show contents of label
+12
+> 3254@.  // mem values changeover time so use lables
 12
 ```
 - n@ retrieves memory location contents
 ```
 > 3323@
-25333 // or #62F5 (depends on mode) stored as 16 bits
+25333     // or #62F5 (depends on mode) stored as 16 bits
 ```
 - a@ gets the mem address of label
 ```
