@@ -10,12 +10,12 @@ There are 26 letters in the English alphabet.
 
 Total: \( 26 \)
 
-### 2. Lowercase Letter Followed by a Single Digit: `a0` to `a9`, `b0` to `b9`, ..., `z0` to `z9`
+### 2. Lowercase Letter Followed by a Single Digit: `a0` to `a9`, `b0` to `b9`, ..., `z0` to `z9`   --- can be compiled out
 For each of the 26 letters, there are 10 possible digits (0-9).
 
 Total: \( 26 * 10 = 260 \)
 
-### 3. Two Lowercase Letters: `aa`, `ab`, ..., `az`, `ba`, ..., `zz`
+### 3. Two Lowercase Letters: `aa`, `ab`, ..., `az`, `ba`, ..., `zz`   --- can be compiled out
 Each of the two positions can be any of the 26 letters.
 
 Total: \( 26 * 26 = 676 \)
