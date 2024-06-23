@@ -3,7 +3,7 @@ MINTX extends MINT with linear algebra with syntax changes
 
 
 
-## labels
+## Labels
 
 ### 1. Single Lowercase Letters: `a` to `z`
 There are 26 letters in the English alphabet.
@@ -30,14 +30,16 @@ To find the total number of combinations for all specified formats, sum the tota
 ## Grammar  
 - error return `er`
 - n places number on stack
-- . removes from stack and displays to default ie terminal
+- . show and pop stack and remove displays to default ie terminal
+- a. show and pop label, n or array
+- ctr. show array stack without pop
+ 
 ```
-> 12
->
-> .   
-> 12
-> .  
-> 0
+> 12 .
+12
+> .      //again  
+0
+
 ```
 - ! stores
 ```
@@ -103,13 +105,14 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 
 
 ## Arrays
--  [ ] for arrays, ( ) for loops
+-  [ ] for arrays
+-  ( ) for loops
 - use numbers n
 - use labels a - z
 - nesting [   [ ]  ] , [  () ], (  () ), etc
 - 
 
-## row vector
+## Row Vector
 
 ```
 [n n n ..] places numbers on array stack and puts mem address on stack
@@ -134,8 +137,7 @@ a 3*  multiply array by 3
 1 2 3
 > 
 > a[0-2].
-1 2 3
->
+1 2 3]>
 > a[0].    
 1
 > a[1].
@@ -167,7 +169,7 @@ er
 - use ( ) strictly for loops not in array matrix commands
 
 
-## column vector  
+## Column Vector  
 use `\`  or `;`
 
 ```
@@ -175,14 +177,11 @@ use `\`  or `;`
 > a@.
 3232      // mem location
 > a.
-1
-2
-3
+1 ; 2 ; 3
+
 > [1 2 3 ;]a!  //  `;` allowed and matrix [n..; n..; n..; ..]
 > a.
-1
-2
-3
+1 ; 2 ; 3
 >
 > // need label each time
 > a0?. a1?. a2?.    
@@ -200,15 +199,11 @@ use `\`  or `;`
 > a[2-0]?.  
 er        // dimension error unless we stored it as row of [1 2 3]a! 
 > a.  
-1
-2
-3
+1 ; 2 ; 3
 >
 > a 2 * b!
 > b.
-2
-4
-6
+2 ; 4 ; 6
 >
 > b[0-2]?.  or b.
 2
@@ -227,44 +222,39 @@ er        // dimension error unless we stored it as row of [1 2 3]a!
 ```
 > /r[3x]a! 
 a.
-1 7 8
-5 7 1
-4 7 7
+[1 7 8 ; 5 7 1 ; 4 7 7 ]
 > /p a[2x3] a!  //
 > a.
-1 7 8
-5 7 1
-4 7 7
->
+[1 7 8 ; 5 7 1 ]
+
 >
 > /r[3x]a!
 > a.
-3 5 2
-5 8 9
-6 4 6
+[3 5 2 ; 5 8 9 ; 6 4 6 ]
 > a /p[4x4] a!   // expanding cloning
 > a.
-3 5 2 2
-5 8 9 9
-6 4 6 6
-6 4 6 6
+[ 3 5 2 2 ; 5 8 9 9 ; 6 4 6 6 ; 6 4 6 6 ]
 >
 ```
 
-## zeros 
+## Filling 
+- n[m]a!
+- if n=0 then no need to type
+  
 ```
-> 0[4] a!  
+> [4] a!    //with 0  
 > a.
 0 0 0 0
+
 >
-> 0\[4]a!  // or 0[4;]a!   
+> \[4]a!  // or [4;]a!   
 > a.
 0
 0
 0
 0
 >
-> 3[4] a! 
+> 3[4] a!   // with number
 > a.
 3 3 3 3
 >
@@ -277,17 +267,18 @@ a.
 > 
 ```
 ## n x n matrix
-```
-- n can = m 
-- no n or m = 0
+
+- no n or m then = 0
+- n = m is ok 
 - x for making nxm matrix
 - , for finding n,m inserting 
 - for n[nx] put n into n x n square
 - for n[nxm] put n into n x m rectangle 
-- \[nx] or \[nxm] = er 
-- n[n,m] put n into n,m location 
-
-
+- \[nx] or \[nxm] = er as its a dimension error
+- n[n,m] put n into n,m locations 
+- ? show a location i array
+- 
+```
 > [4x]a!      
 > a.
 0 0 0 0
@@ -301,16 +292,16 @@ a.
 2 2 2
 2 2 2
 >
-> /r[3x]a!   // `/r` random integer 
+> /r[3x]a!         // `/r` random integer 
 > a.
 2211  5004  2311
 12    3333  7123
 4454  11134 7003
-> /rd[2x]a!   //  `/rd` random 3dec place
+> /rd[2x]a!        //  `/rd` random 3dec places
 22.110 5.004 
 45.100 99.999
 >
-> -12[0,1]a!   // change 12 to -12, its still in matrix stack xxx
+> -12[0,1]a!   // change 12 to -12
 > a.
 2211  5004  2311
 -12    3333  7123
@@ -342,9 +333,11 @@ a.
 4 5 6 
 7 8 9
 >
+```
 
-// MINTX pi uses 3 dec place floating-point IEEE 754
->
+MINTX pi uses 3 dec place floating-point IEEE 754
+
+```
 > pi a * a!
 > a.
 69.120 103.670 138.230 172.790
@@ -364,8 +357,9 @@ a.
 
 ### Complex numbers
 
+
+// magnitude
 ```
-// stack
 > 3-4i
 > . 
 3-4i 
@@ -373,29 +367,43 @@ a.
 1-4i
 > 1i - .
 1-5i
->
-// arrays
+``
+
+// array
+```
 > /ri [2x] a!  // /`ri` random imaginary also /rid for random imaginary dec 
 > a.
 1+3i 2-1i 
-3 4+4i 
+3 4+4i
+> 
 > [2 3 ; 6 7] b!
 > b.
 2 3
 6 7
+>
+
 > a b - c! c.
 -1+3i -1-i
 -3, -3+4i
+>
 > a b + c! c.
 3+3i 5-i
 9 11+4i
+>
 > a b * c! c.
 4 17+2i
 30+24i 37+28i
 >
+> [1+2i 3+4i ; 5+6i 7+8i]a!
+> [2+i 4+3i ; 6+5i 7+8i]b!
+> a b / c! c.
+[ 0+0.6i 0+0.28i ; 0+.18i 0+0.13i]
+>   
+
 
 ```
-### fractional integers
+
+### Fraction -Integers  + - *
 
 ```
 > /r[3x]a!
@@ -404,24 +412,34 @@ a.
 1 6 5
 8 7 3
 3 8 3
+>
 > [1 1/2 3 ; 4/5 6 7/8 ; 9 11/16 4/3 ] b!
 > a b + c! c.
 2 2/3 4
 9/5 7 15/8
 10 27/16 7/3
+>
 > ​a b - c! c.
 0 -1/2 2
 -1/5 5 -1/8
 8 -5/16 1/3
+>
 > ​a b * c! c.
 9/2 9/2 9/2
 307/40 307/40 307/40
 529/48 529/48 529/48
-> ​a b / c! c.
-er
 >
-
+> [1/2 2/3 ; 3/4 4/5] a!
+> [2/3 3/4 ; 4/5 5/6] b!
+> a b / c! c.
+3/4 8/9
+15/16 24/25
+> 
+​
+   
 ```
+
+
 ### Nested arrays
 
 Arrays can be nested inside one another. This code accesses the second item of the first array with 1?. It then accesses the first item of the inner array with 0? and prints the result (which is 2).
