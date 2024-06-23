@@ -30,9 +30,9 @@ To find the total number of combinations for all specified formats, sum the tota
 ## Grammar  
 - error return `er`
 - n places number on stack
-- . show and pop stack   or last operation without saving
-- a. show and pop label, n or array
-- ctr. show array stack without pop
+- `.` show and pop stack   or last operation without saving
+- `a. show and pop label, n or array
+- `ctr.` show array stack without pop
  
 ```
 > 12 .
@@ -41,7 +41,7 @@ To find the total number of combinations for all specified formats, sum the tota
 0
 
 ```
-- ! stores
+- `!` stores
 ```
 > 12!
 > .
@@ -56,12 +56,12 @@ To find the total number of combinations for all specified formats, sum the tota
 > 3254@.  // mem values changeover time so use lables
 12
 ```
-- n@ retrieves memory location contents
+- `n@` retrieves memory location contents
 ```
 > 3323@
 25333     // or #62F5 (depends on mode) stored as 16 bits
 ```
-- a@ gets the mem address of label
+- `a@` gets the mem address of label
 ```
 > a@
 3233
@@ -109,22 +109,21 @@ The trace of a matrix is the sum of its diagonal elements. In terms of 32-bit in
 -  ( ) for loops
 - use numbers n
 - use labels a - z
-- nesting [   [ ]  ] , [  () ], (  () ), etc
+- nesting `[   [ ]  ] , [  () ], (  () ),` etc
 - 
 
 ## Row Vector
 
-```
-[n n n ..] places numbers on array stack and puts mem address on stack
-[ n n n ..] a! store in a-z with ! 
-a@ retrieves memory location, a@. shows it
-a retrieves contents of address
-a. show whole array, b c d e .... z
-n[row-col] places n into row-col
-use ? to find an number in the array n[row-col]?. 
-[3 4] a!
-a 3*  multiply array by 3
 
+-[n n n ..] places numbers on array stack and puts mem address on stack
+-[ n n n ..] a! store in a-z with ! 
+- `a@` retrieves memory location, a@. shows it
+- `a` retrieves contents of address
+- `a.` show whole array, b c d e .... z
+- `n[row-col]` places n into row-col
+- use `?` to find an number in the array n[row-col]?. 
+- 
+```
 > [1 2 3]
 > .
 3233         // stored in mem location
@@ -137,7 +136,8 @@ a 3*  multiply array by 3
 1 2 3
 > 
 > a[0-2].
-1 2 3]>
+1 2 3
+>
 > a[0].    
 1
 > a[1].
