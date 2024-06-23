@@ -1,4 +1,4 @@
-## MINTX features
+## MINTX  
 MINTX is a build on MINT with modifications
 
 
