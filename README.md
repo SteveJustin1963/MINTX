@@ -3,7 +3,7 @@ If you after normal MINT code go here https://github.com/orgMINT
 
 
 ## MINTX  
-MINTX extends MINT with linear algebra with syntax changes
+experiment - MINTX extends MINT with linear algebra with syntax changes
 
 
 
